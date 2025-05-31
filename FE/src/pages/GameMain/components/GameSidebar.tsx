@@ -5,7 +5,7 @@ import { getPlayerIcon } from "../../../util/PlayerIcon";
 import { useClickSound } from "../../../hooks/useClickSound";
 import slideSound from "../../../assets/bgm/slide.mp3";
 import AudioPlayer from "../../../util/AudioPlayer";
-import { memo } from "react";
+// import { memo } from "react";
 
 function GameSidebar() {
   const blockStyle =

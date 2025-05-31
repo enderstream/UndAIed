@@ -12,7 +12,7 @@ export const apiClient = axios.create({
 // 요청 인터셉터 설정
 apiClient.interceptors.request.use(
   (config) => {
-    console.log(localStorage.getItem("userPersist"));
+    // console.log(localStorage.getItem("userPersist"));
     const token = localStorage.getItem("userPersist")
       ? JSON.parse(localStorage.getItem("userPersist")!).userState.token
       : null;

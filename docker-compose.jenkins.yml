@@ -9,12 +9,12 @@ services:
       - ./jenkins_home:/var/jenkins_home:rw # << ./ 해주면 현재 디렉토리에 jenkins_home을 생성함
       - /usr/local/bin/docker-compose:/usr/local/bin/docker-compose
     networks:
-      - app_network
+      - undaied
     restart: unless-stopped
     environment:
       TZ: Asia/Seoul
       JENKINS_OPTS: "--httpPort=8443 --prefix=/jenkins"
 
 networks:
-  app_network:
+  undaied:
     external: true

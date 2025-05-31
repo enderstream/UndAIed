@@ -6,15 +6,15 @@ import GameRoomList from "./components/GameRoomList";
 import GameHeader from "./components/GameHeader";
 import GameSidebar from "./components/GameSidebar";
 import GameMainChat from "./components/GameMainChat";
-import GameMainMenu from "./components/GameMainMenu";
+// import GameMainMenu from "./components/GameMainMenu";
 import CreateRoomButton from "./components/CreateRoomButton";
 import AudioPlayer from "../../util/AudioPlayer";
-import { useRecoilValue } from "recoil";
-import { settingsState } from "../../store/settingState";
+// import { useRecoilValue } from "recoil";
+// import { settingsState } from "../../store/settingState";
 
 function GameMain() {
-  const settingData = useRecoilValue(settingsState);
-  const isFullscreen = settingData.isFullscreen;
+  // const settingData = useRecoilValue(settingsState);
+  // const isFullscreen = settingData.isFullscreen;
   return (
     <>
       <AudioPlayer src={lobbyBgm} isPlaying={true} shouldLoop={true} />

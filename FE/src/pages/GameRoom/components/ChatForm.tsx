@@ -15,13 +15,14 @@ interface IForm {
   chat: string;
 }
 
-function ChatForm({ playerNum, socket, onSendChat }: IFormProps) {
+function ChatForm({ onSendChat }: IFormProps) {
+// function ChatForm({ playerNum, socket, onSendChat }: IFormProps) {
   const paperPlane: IconDefinition = faPaperPlane;
   const {
     register,
     handleSubmit,
     resetField,
-    formState: { errors },
+    // formState: { errors },
   } = useForm<IForm>();
 
   const lastChatTimeRef = useRef<number>(0);

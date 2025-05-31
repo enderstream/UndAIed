@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import HeaderTemp from "../components/HeaderTemp";
 import { toast } from "sonner";
 import { Link } from "react-router";
-import axios from "axios";
+// import axios from "axios";
 
 interface IProfile {
   nickname: string;
@@ -20,16 +20,17 @@ function Signup() {
     formState: { errors },
   } = useForm<IProfile>();
 
-  const onValidSubmit: SubmitHandler<IProfile> = async (data) => {
+  const onValidSubmit: SubmitHandler<IProfile> = async () => {
+  // const onValidSubmit: SubmitHandler<IProfile> = async (data) => {
     try {
       //바꾸지 않은 값은 null이 되어야 한다.
-      const response = await axios.patch("api/v1/user/profile", {
-        sex: data.gender, // 남자는 true, 여자는 false
-        profile_image: null, // 프론트에서 랜덤으로 지정하여 보내줄 것.
-        avatar: null, // 프론트에서 랜덤으로 지정하여 보내줄 것.
-        age: data.age,
-        nickname: data.nickname,
-      });
+      // const response = await axios.patch("api/v1/user/profile", {
+      //   sex: data.gender, // 남자는 true, 여자는 false
+      //   profile_image: null, // 프론트에서 랜덤으로 지정하여 보내줄 것.
+      //   avatar: null, // 프론트에서 랜덤으로 지정하여 보내줄 것.
+      //   age: data.age,
+      //   nickname: data.nickname,
+      // });
     } catch (error) {}
   };
   const onInvalidSubmit = (errors: FieldErrors<IProfile>) => {

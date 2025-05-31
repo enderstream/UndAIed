@@ -1,8 +1,8 @@
 import { useState } from "react";
 import {
-  faBell,
+  // faBell,
   faGear,
-  faUserGroup,
+  // faUserGroup,
   faDoorOpen,
   faCircleExclamation,
   faBars,
@@ -28,9 +28,9 @@ interface ILeftGameSideBarProps {
 }
 
 //아이콘
-const bell: IconDefinition = faBell;
+// const bell: IconDefinition = faBell;
 const gear: IconDefinition = faGear;
-const userGroup: IconDefinition = faUserGroup;
+// const userGroup: IconDefinition = faUserGroup;
 const circleExclamation: IconDefinition = faCircleExclamation;
 const doorOpen: IconDefinition = faDoorOpen;
 const menu: IconDefinition = faBars;
@@ -43,7 +43,7 @@ function LeftGameSideBar({
   timer,
   stage,
   round,
-  socket,
+  // socket,
   onSettingsClick,
 }: // onLeaveRoom,
 ILeftGameSideBarProps) {

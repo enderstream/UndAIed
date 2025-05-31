@@ -19,7 +19,7 @@ interface IForm {
 }
 
 function ChatForm({
-  socket,
+  // socket,
   isDead,
   onSendChat,
   isVote,
@@ -31,7 +31,7 @@ function ChatForm({
     register,
     handleSubmit,
     resetField,
-    formState: { errors },
+    // formState: { errors },
   } = useForm<IForm>();
 
   // 마지막 채팅 전송 시간을 기록할 ref

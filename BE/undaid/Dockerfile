@@ -5,7 +5,7 @@ WORKDIR /home/gradle/src
 
 COPY --chown=gradle:gradle . .
 
-RUN gradle build -x test --no-daemon
+RUN gradle build -x test --no-daemon --refresh-dependencies --stacktrace
 
 # 실행 스테이지
 FROM openjdk:17-jdk

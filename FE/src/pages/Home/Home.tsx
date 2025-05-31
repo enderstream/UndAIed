@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
 
-import { Link, useOutletContext } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import HeaderTemp from "../../components/HeaderTemp";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import {
-  faChevronDown,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+// import {  faChevronDown,  faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../../assets/svg-icon/game_logo.svg";
 import InfoContainer from "./components/InfoContainer";
 
@@ -31,35 +28,35 @@ import Img3 from "../../assets/tutorial/3.png";
 import Img4 from "../../assets/tutorial/4.png";
 import Img5 from "../../assets/tutorial/5.png";
 
-interface IBoard {
-  id: number;
-  tag: string;
-  title: string;
-  date: string; // true면 내가 보낸 메시지, false면 상대방 메시지
-}
+// interface IBoard {
+//   id: number;
+//   tag: string;
+//   title: string;
+//   date: string; // true면 내가 보낸 메시지, false면 상대방 메시지
+// }
 
 function Home() {
   //fontawsome 타입 선언
-  const downChervon: IconDefinition = faChevronDown;
-  const rightChervon: IconDefinition = faChevronRight;
+  // const downChervon: IconDefinition = faChevronDown;
+  // const rightChervon: IconDefinition = faChevronRight;
 
-  const [offset, setOffset] = useState(0);
+  // const [offset, setOffset] = useState(0);
   const [scrollRatio, setScrollRatio] = useState(0);
   const INFO_VIEWPORT = 2;
   const [infoScrollRatio, setInfoScrollRatio] = useState(0);
 
   const userInfo = useRecoilValue(userState);
 
-  //게시글 관련련
-  const [boards, setBoards] = useState<IBoard[]>([
-    { id: 0, tag: "공지", title: "첫번째 공지", date: "2025-02-03" },
-    { id: 1, tag: "공지", title: "두번째 공지", date: "2025-02-03" },
-    { id: 2, tag: "공지", title: "세번째 공지", date: "2025-02-03" },
-    { id: 3, tag: "공지", title: "네번째 공지", date: "2025-02-03" },
-    { id: 4, tag: "공지", title: "다섯번째 공지", date: "2025-02-03" },
-    { id: 5, tag: "공지", title: "여섯번째 공지", date: "2025-02-03" },
-    { id: 6, tag: "공지", title: "일곱번째 공지", date: "2025-02-03" },
-  ]);
+  //게시글 관련
+  // const [boards, setBoards] = useState<IBoard[]>([
+  //   { id: 0, tag: "공지", title: "첫번째 공지", date: "2025-02-03" },
+  //   { id: 1, tag: "공지", title: "두번째 공지", date: "2025-02-03" },
+  //   { id: 2, tag: "공지", title: "세번째 공지", date: "2025-02-03" },
+  //   { id: 3, tag: "공지", title: "네번째 공지", date: "2025-02-03" },
+  //   { id: 4, tag: "공지", title: "다섯번째 공지", date: "2025-02-03" },
+  //   { id: 5, tag: "공지", title: "여섯번째 공지", date: "2025-02-03" },
+  //   { id: 6, tag: "공지", title: "일곱번째 공지", date: "2025-02-03" },
+  // ]);
 
   useEffect(() => {
     const audioFiles = [
@@ -80,7 +77,7 @@ function Home() {
       const winHeight = window.innerHeight; // 뷰포트 높이
       const infoHeigt = winHeight * INFO_VIEWPORT; // 안내 스크린 끝까지의 높이이
       const totalScrollableHeight = docHeight - winHeight; // 스크롤 가능한 전체 높이
-      setOffset(window.scrollY);
+      // setOffset(window.scrollY);
       setScrollRatio(
         window.scrollY === 0
           ? 0
@@ -123,12 +120,12 @@ function Home() {
     // }
   }, []);
 
-  const onChervonClick = () => {
-    window.scrollTo({
-      top: window.innerHeight * 3,
-      behavior: "smooth",
-    });
-  };
+  // const onChervonClick = () => {
+  //   window.scrollTo({
+  //     top: window.innerHeight * 3,
+  //     behavior: "smooth",
+  //   });
+  // };
 
   return (
     <div className="">

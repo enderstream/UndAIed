@@ -7,7 +7,7 @@ import Banner from "./Banner";
 import {
   useAdminUpdatePost,
   useGetPost,
-  useUpdatePost,
+  // useUpdatePost,
 } from "../../../hooks/useBoard";
 import { BoardRequest } from "../../../types/board";
 import Header from "../../../components/Header";

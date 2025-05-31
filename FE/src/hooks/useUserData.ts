@@ -12,7 +12,7 @@ export function useUserProfile() {
     queryKey: ["userProfile"],
     queryFn: async () => {
       const response = await apiClient.get("api/v1/user/profile");
-      console.log("유저 데이터 수신 완료", response);
+      // console.log("유저 데이터 수신 완료", response);
       return response.data;
     },
     enabled: !!user.token, // 토큰이 있을 때만 쿼리 실행

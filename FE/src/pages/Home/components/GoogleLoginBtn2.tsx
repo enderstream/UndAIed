@@ -28,7 +28,7 @@ const GoogleLoginButton2: React.FC<GoogleLoginButtonProps> = ({
     ) {
       google.accounts.id.initialize({
         client_id:
-          "795412424002-h96s44dm1b7junqvntu384qk2otab42n.apps.googleusercontent.com", // 환경 변수에서 가져오기
+          "704642215458-2og18pmpedr8rc1n1rc2443b86mspdgt.apps.googleusercontent.com", // 환경 변수에서 가져오기
         callback: handleCallbackResponse,
       });
 

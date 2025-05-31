@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-import { useParams } from "react-router-dom";
-=======
 import { useParams } from "react-router";
 import { useRecoilState } from "recoil";
-import { currentPageState, boardRefreshState } from "../../store/boardState";
-import { useEffect } from "react";
+import { currentPageState } from "../../store/boardState";
+// import { useEffect } from "react";
 import boardBanner from "../../assets/board/upscalingBoard.png";
 
 import Banner from "./components/Banner";
@@ -19,7 +16,7 @@ function Board() {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageState);
   const { category } = useParams<{ category: string }>();
 
-  const [boardRefresh] = useRecoilState(boardRefreshState);
+  // const [boardRefresh] = useRecoilState(boardRefreshState);
 
   const validateCategory = (cat: string | undefined): CategoryType => {
     if (cat === "bugreport") return "bugreport";

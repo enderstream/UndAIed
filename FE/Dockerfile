@@ -1,17 +1,48 @@
+# FROM node:22
+
+# WORKDIR /FE
+
+# COPY package*.json ./
+
+# RUN npm cache clean --force && \
+#     rm -rf node_modules package-lock.json && \
+#     npm install && \
+#     npm install sonner && \
+#     npm install socket.io-client
+
+# COPY . .
+
+# EXPOSE 5173
+
+# CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+
+
+
+
+
+
 FROM node:22
+WORKDIR /frontend
 
-WORKDIR /FE
-
+# 1) package.json(lock 포함) 복사
 COPY package*.json ./
 
-RUN npm cache clean --force && \
-    rm -rf node_modules package-lock.json && \
-    npm install && \
-    npm install sonner && \
-    npm install socket.io-client
+# 2) 기존 lockfile/node_modules 삭제 → npm install 로 다시 설치
+RUN rm -rf node_modules package-lock.json \
+ && npm install
 
+# 3) serve 글로벌 설치 + 캐시 정리
+RUN npm install -g serve \
+ && npm cache clean --force
+
+# 4) 앱 소스 복사
 COPY . .
 
-EXPOSE 5173
+# 5) 프로덕션 빌드
+RUN npm run build
 
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+# 6) devDependencies 제거 (이미 빌드 끝난 후)
+RUN npm prune --omit=dev
+
+EXPOSE 5173
+CMD ["serve", "-s", "dist", "-l", "5173"]

@@ -13,6 +13,7 @@ const Policy: React.FC<ConsentProps> = ({ onAccept, onDecline }) => {
   const handleSubmit = () => {
     if (isChecked) {
       onAccept();
+      navigate("/game", { replace: true });
     } else {
       if (
         window.confirm(

@@ -13,7 +13,7 @@ interface IReadyProfileProps {
 function ReadyProfile({
   nickname,
   icon,
-  playerNum,
+  // playerNum,
   isHost,
 }: IReadyProfileProps) {
   const crown: IconDefinition = faCrown;

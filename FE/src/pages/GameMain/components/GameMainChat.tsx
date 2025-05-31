@@ -15,14 +15,14 @@ function GameMainChat() {
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const [isScrolledToBottom, setIsScrolledToBottom] = useState(true);
 
-  const checkScrollBottom = () => {
-    if (chatContainerRef.current) {
-      const { scrollTop, scrollHeight, clientHeight } =
-        chatContainerRef.current;
-      const isBottom = Math.abs(scrollHeight - clientHeight - scrollTop) < 10;
-      setIsScrolledToBottom(isBottom);
-    }
-  };
+  // const checkScrollBottom = () => {
+  //   if (chatContainerRef.current) {
+  //     const { scrollTop, scrollHeight, clientHeight } =
+  //       chatContainerRef.current;
+  //     const isBottom = Math.abs(scrollHeight - clientHeight - scrollTop) < 10;
+  //     setIsScrolledToBottom(isBottom);
+  //   }
+  // };
 
   const scrollToBottom = () => {
     if (chatContainerRef.current) {

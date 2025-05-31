@@ -3,16 +3,16 @@ import gameMyPageBackground from "../../assets/game-my-page/game-my-page-backgro
 import GameUserInfo from "./components/GameUserInfo";
 import Character from "./components/Character";
 import GamePlayList from "./components/GamePlayList";
-import { useRecoilValue } from "recoil";
-import { settingsState } from "../../store/settingState";
+// import { useRecoilValue } from "recoil";
+// import { settingsState } from "../../store/settingState";
 import "../GameMain/components/style.css";
 import AudioPlayer from "../../util/AudioPlayer";
 import slideSound from "../../assets/bgm/slide.mp3";
 import myPageBgm from "../../assets/bgm/my-page.mp3";
 
 function GameMyPage() {
-  const settingData = useRecoilValue(settingsState);
-  const isFullscreen = settingData.isFullscreen;
+  // const settingData = useRecoilValue(settingsState);
+  // const isFullscreen = settingData.isFullscreen;
 
   return (
     <div className="bg-black flex flex-col items-center h-screen min-h-[900px]">

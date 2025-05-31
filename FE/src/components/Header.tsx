@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-import { Link, useNavigate } from "react-router-dom"
-=======
-import { Link, useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import { Link } from "react-router-dom";
+// import { Link, useNavigate } from "react-router-dom";
+// import React, { useState } from "react";
 import Logo from "../assets/svg-icon/game_logo.svg";
 import { useRecoilValue } from "recoil";
 import { userState } from "../store/userState";
@@ -13,28 +11,28 @@ interface IHeaderProps {
 }
 
 function Header({ scrollRatio }: IHeaderProps) {
-  const [scrollTop, setScrollTop] = useState(0);
+  // const [scrollTop, setScrollTop] = useState(0);
 
-  const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
-    const currentScrollTop = event.currentTarget.scrollTop;
-    setScrollTop(currentScrollTop);
-  };
+  // const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
+  //   // const currentScrollTop = event.currentTarget.scrollTop;
+  //   // setScrollTop(currentScrollTop);
+  // };
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const onBoardClick = () => {
-    navigate("/board");
-  };
+  // const onBoardClick = () => {
+  //   navigate("/board");
+  // };
 
-  const goToLogin = () => {
-    navigate("#login");
-  };
+  // const goToLogin = () => {
+  //   navigate("#login");
+  // };
   const userData = useRecoilValue(userState);
   const isLogin = userData.isLogin;
 
   return (
     <header
-      onScroll={handleScroll}
+      // onScroll={handleScroll}
       className="fixed z-40 flex flex-col w-screen h-14 pt-4 primary-bg-black header-style"
     >
       <nav>
@@ -82,4 +80,3 @@ function Header({ scrollRatio }: IHeaderProps) {
 }
 
 export default Header;
->>>>>>> release

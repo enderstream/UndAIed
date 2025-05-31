@@ -6,7 +6,8 @@ import {
   faCheckToSlot,
 } from "@fortawesome/free-solid-svg-icons";
 import { useRecoilState } from "recoil";
-import { isUserDiedState, userMemoState } from "../../../store/gamePlayState";
+import { userMemoState } from "../../../store/gamePlayState";
+// import { isUserDiedState, userMemoState } from "../../../store/gamePlayState";
 import { useCallback, useState } from "react";
 import MemoModal from "./MemoModal";
 
@@ -24,14 +25,14 @@ function GameProfile({
   icon,
   playerNum,
   stage,
-  isDied,
+  // isDied,
   onVoteSubmit,
 }: IGameProfileProps) {
   const robot: IconDefinition = faRobot;
   const noteSticky: IconDefinition = faNoteSticky;
   const checkToSlot: IconDefinition = faCheckToSlot;
 
-  const [isUserDead, setIsUserDead] = useRecoilState<boolean>(isUserDiedState);
+  // const [isUserDead, setIsUserDead] = useRecoilState<boolean>(isUserDiedState);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [userMemos, setUserMemos] = useRecoilState(userMemoState);
@@ -101,7 +102,8 @@ function GameProfile({
             }  p-1 w-[1.25rem] h-[1.25rem] mx-1`}
           />
         </button>
-        {stage === "vote" && isUserDead === false ? (
+        {stage === "vote" ? (
+        // {stage === "vote" && isUserDead === false ? (
           <button
             onClick={() => {
               onVoteSubmit(playerNum);

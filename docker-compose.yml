@@ -8,7 +8,7 @@ services:
       - ./FE:/FE
       - /FE/node_modules
     networks:
-      - app_network
+      - undaied
     restart: always
     environment:
       - TZ=Asia/Seoul
@@ -43,7 +43,7 @@ services:
         soft: 65536
         hard: 65536
     networks:
-      - app_network
+      - undaied
     restart: always
     deploy:
       resources:
@@ -63,7 +63,7 @@ services:
       - PYTHONPATH=/AI
       - TZ=Asia/Seoul
     networks:
-      - app_network
+      - undaied
     restart: always
 
   mysql:
@@ -83,7 +83,7 @@ services:
       - mysql_data:/var/lib/mysql
       - ./mysql/pid:/pid
     networks:
-      - app_network
+      - undaied
     restart: always
     deploy:
       resources:
@@ -102,7 +102,7 @@ services:
       - ./redis/var/run/redis:/var/run/redis
       - redis_data:/data
     networks:
-      - app_network
+      - undaied
 
 volumes:
   mysql_data:
@@ -111,5 +111,5 @@ volumes:
   redis_pid:
 
 networks:
-  app_network:
+  undaied:
     external: true

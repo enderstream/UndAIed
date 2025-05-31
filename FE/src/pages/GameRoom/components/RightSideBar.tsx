@@ -1,11 +1,11 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReadyProfile from "./ReadyProfile";
 import EmptyProfile from "./EmptyProfile";
 import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IMessage, IPlayer } from "../../../types/gameroom";
-import SystemBubble from "../../GamePlay/components/SystemBubble";
+// import SystemBubble from "../../GamePlay/components/SystemBubble";
 import { getPlayerIcon } from "../../../util/PlayerIcon";
 
 interface RightSideBarProps {

@@ -31,7 +31,7 @@ function PostList({
 
   const { category } = useParams<{ category: string }>();
   const userRole = decodeToken(token)?.roles;
-  console.log(userRole);
+  // console.log(userRole);
 
   useEffect(() => {}, [boardRefresh]);
 

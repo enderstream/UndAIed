@@ -19,7 +19,7 @@
 // );
 
 
-import { StrictMode } from "react";
+// import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { RouterProvider } from "react-router-dom";
@@ -34,7 +34,7 @@ createRoot(document.getElementById("root")!).render(
   // <StrictMode>
   <RecoilRoot>
     <QueryClientProvider client={queryClient}>
-      <SocketProvider>
+      <SocketProvider url="https://www.undaied.com">
         <RouterProvider router={router} />
       </SocketProvider>
     </QueryClientProvider>

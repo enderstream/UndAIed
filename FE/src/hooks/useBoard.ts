@@ -2,14 +2,14 @@ import {
   useQuery,
   useMutation,
   useQueryClient,
-  QueryClient,
-  useInfiniteQuery,
+  // QueryClient,
+  // useInfiniteQuery,
 } from "@tanstack/react-query";
 import { boardApi, AdminBoardApi } from "../api/boardApi";
 import {
   BoardDetailResponse,
   BoardRequest,
-  Post,
+  // Post,
   UpdatePostParams,
 } from "../types/board";
 
@@ -57,8 +57,8 @@ export const useUpdatePost = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: ({ id, data }: UpdatePostParams) =>
-      boardApi.updatePost(id, data),
+    mutationFn: ({ id }: UpdatePostParams) =>
+      boardApi.updatePost(id),
 
     onSuccess: (_, { id }) => {
       // 수정 성공 시 해당 게시글의 캐시를 무효화

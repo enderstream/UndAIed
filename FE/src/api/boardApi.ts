@@ -8,8 +8,10 @@ export const boardApi = {
     }),
   getPost: (id: number) => apiClient.get(`/api/v1/board/${id}`),
   createPost: (data: BoardRequest) => apiClient.post("/api/v1/board", data),
-  updatePost: (id: number, data: Partial<BoardRequest>) =>
+  updatePost: (id: number) =>
     apiClient.patch(`/api/v1/board/${id}`),
+  // updatePost: (id: number, data: Partial<BoardRequest>) =>
+  //   apiClient.patch(`/api/v1/board/${id}`),
   deletePost: (id: number) => apiClient.delete(`/api/v1/board/${id}`),
 };
 

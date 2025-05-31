@@ -11,14 +11,15 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt:ro
       - /etc/ssl/certs:/etc/ssl/certs:ro
       - /etc/nginx/sites-available:/etc/nginx/sites-available:ro
-      - /var/log/nginx:/var/log/nginx
+      # - /var/log/nginx:/var/log/nginx
+      - ./nginx/logs:/var/log/nginx
       - ./nginx/html:/usr/share/nginx/html:ro
     networks:
-      - app_network
+      - undaied
     restart: always
     environment:
       TZ: Asia/Seoul
 
 networks:
-  app_network:
+  undaied:
     external: true  # 기존 네트워크를 사용하기 위한 설정

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+// import { useNavigate, useParams } from "react-router-dom";
 import PlayerIcon1 from "../../assets/player-icon/player-icon-1.svg";
 import PlayerIcon2 from "../../assets/player-icon/player-icon-2.svg";
 import PlayerIcon3 from "../../assets/player-icon/player-icon-3.svg";
@@ -29,7 +29,7 @@ import { STAGE_INFO } from "./components/info";
 import { useRecoilState, useResetRecoilState } from "recoil";
 import {
   isGameEndState,
-  isUserDiedState,
+  // isUserDiedState,
   userMemoState,
 } from "../../store/gamePlayState";
 import GameEndModal from "./components/GameEndModal";
@@ -48,11 +48,11 @@ interface IGameInfoSend {
   players: IAnonimus[];
 }
 
-interface IGameInfoEmitDone {
-  success: boolean;
-  errorMessage: string;
-  playerId: number;
-}
+// interface IGameInfoEmitDone {
+//   success: boolean;
+//   errorMessage: string;
+//   playerId: number;
+// }
 
 interface IGameChatEmitDone {
   success: boolean;
@@ -69,9 +69,9 @@ interface IVoteEmitDone {
 }
 
 function GamePlay() {
-  const { number } = useParams();
+  // const { number } = useParams();
   const scrollRef = useRef<HTMLDivElement | null>(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   //플레이어 본인
   const [playerEnterId, setPlayerEnterId] = useState<number>();
@@ -81,7 +81,7 @@ function GamePlay() {
   const [gameInfo, setGameInfo] = useState<IGameInfoSend>();
   const [gameResult, setGameResult] = useState<IGameResultSend>();
 
-  const [isUserDead, setIsUserDead] = useRecoilState<boolean>(isUserDiedState);
+  // const [isUserDead, setIsUserDead] = useRecoilState<boolean>(isUserDiedState);
 
   const [isGameEnd, setIsGameEnd] = useRecoilState(isGameEndState);
 
@@ -260,7 +260,7 @@ function GamePlay() {
 
   useEffect(() => {
     if (playerInfo) {
-      setIsUserDead(playerInfo.died);
+      // setIsUserDead(playerInfo.died);
     }
   }, [playerInfo]);
 
@@ -275,7 +275,7 @@ function GamePlay() {
         {
           content: input,
         },
-        ({ success, errorMessage, data }: IGameChatEmitDone) => {
+        ({ success, errorMessage }: IGameChatEmitDone) => {
           debugger;
           if (success) {
           } else {

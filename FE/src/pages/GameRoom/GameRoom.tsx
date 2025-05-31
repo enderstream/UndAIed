@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 import SystemBubble from "../GamePlay/components/SystemBubble";
@@ -59,8 +59,8 @@ function GameRoom() {
   //socket 훅 사용
   const socket = useSocket();
 
-  const [roomError, setRoomError] = useState(false);
-  const [roomErrorMessage, setRoomErrorMessage] = useState("");
+  // const [roomError, setRoomError] = useState(false);
+  // const [roomErrorMessage, setRoomErrorMessage] = useState("");
 
   //본인 엔터 아이다와 정보 각각
   const [playerEnterId, setPlayerEnterId] = useState<number>();
@@ -170,16 +170,16 @@ function GameRoom() {
         roomId: Number(roomIdParam),
         password: password,
       },
-      ({ success, errorMessage, enterId, data }: IEmitDone) => {
+      ({ success, errorMessage, enterId }: IEmitDone) => {
         //여기서 받는 건 없음
         if (success) {
           setPlayerEnterId(enterId);
           return;
         } else {
-          setRoomError(true);
-          setRoomErrorMessage(
-            errorMessage || "입장 도중 에러러가 발생했습니다."
-          );
+          // setRoomError(true);
+          // setRoomErrorMessage(
+          //   errorMessage || "입장 도중 에러러가 발생했습니다."
+          // );
           toast.error(errorMessage);
           return;
         }
@@ -220,7 +220,7 @@ function GameRoom() {
           roomId: Number(roomIdParam),
           message: input,
         },
-        ({ success, errorMessage, data }: IChatDone) => {
+        ({ success, errorMessage }: IChatDone) => {
           if (success) {
             debugger;
           } else {
@@ -244,7 +244,7 @@ function GameRoom() {
       "game:init:emit",
       { roomId: Number(roomIdParam) },
       //데이터 형식 맞는지 잘 확인하기. 현재 백에서 data는 gameId임!!
-      ({ success, errorMessage, data }: IGameStartDone) => {
+      ({ success, errorMessage }: IGameStartDone) => {
         if (success) {
         } else {
           //게임 시작 실패 안내내

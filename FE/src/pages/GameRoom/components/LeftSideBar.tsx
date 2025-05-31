@@ -1,8 +1,8 @@
 import { useState } from "react";
 import {
-  faBell,
+  // faBell,
   faGear,
-  faUserGroup,
+  // faUserGroup,
   faDoorOpen,
   faCircleExclamation,
   faBars,
@@ -12,7 +12,7 @@ import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Socket } from "socket.io-client";
 import { IPlayer } from "../../../types/gameroom";
-import { toast } from "sonner";
+// import { toast } from "sonner";
 
 interface ILeftSideBarProps {
   roomId?: number;
@@ -27,9 +27,9 @@ interface ILeftSideBarProps {
 }
 
 //아이콘
-const bell: IconDefinition = faBell;
+// const bell: IconDefinition = faBell;
 const gear: IconDefinition = faGear;
-const userGroup: IconDefinition = faUserGroup;
+// const userGroup: IconDefinition = faUserGroup;
 const circleExclamation: IconDefinition = faCircleExclamation;
 const doorOpen: IconDefinition = faDoorOpen;
 const menu: IconDefinition = faBars;
@@ -40,7 +40,7 @@ function LeftSideBar({
   roomTitle,
   nickname,
   icon,
-  socket,
+  // socket,
   onLeaveRoom,
   onGameStart,
   player,
@@ -48,17 +48,17 @@ function LeftSideBar({
 }: ILeftSideBarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const copyCurrentURL = () => {
-    const url = window.location.href;
-    navigator.clipboard
-      .writeText(url)
-      .then(() => {
-        toast.success("URL이 복사되었습니다!");
-      })
-      .catch((err) => {
-        toast.error("URL 복사 실패: ", err);
-      });
-  };
+  // const copyCurrentURL = () => {
+  //   const url = window.location.href;
+  //   navigator.clipboard
+  //     .writeText(url)
+  //     .then(() => {
+  //       toast.success("URL이 복사되었습니다!");
+  //     })
+  //     .catch((err) => {
+  //       toast.error("URL 복사 실패: ", err);
+  //     });
+  // };
 
   return (
     <>

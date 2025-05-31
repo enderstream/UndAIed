@@ -9,7 +9,7 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import setting from "../assets/icon/setting.png";
-import { setShowIntroState } from "../store/showState";
+// import { setShowIntroState } from "../store/showState";
 import { SettingProps } from "../types/setting";
 import { settingsState } from "../store/settingState";
 
@@ -34,7 +34,7 @@ function Settings({
 }: SettingProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [settings, setSettings] = useRecoilState(settingsState);
-  const [showIntro, setShowIntro] = useRecoilState(setShowIntroState);
+  // const [showIntro, setShowIntro] = useRecoilState(setShowIntroState);
 
   const applySettingsToMedia = () => {
     document.querySelectorAll("video, audio").forEach((element) => {
@@ -115,7 +115,7 @@ function Settings({
 
   const handleAccept = () => {
     setIsOpen(false);
-    setShowIntro(true);
+    // setShowIntro(true);
     setFirst(false);
   };
   return (

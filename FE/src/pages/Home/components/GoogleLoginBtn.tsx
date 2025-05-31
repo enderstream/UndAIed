@@ -16,15 +16,31 @@ const GoogleLoginButton: React.FC<GoogleLoginButtonProps> = ({
     onTokenReceive(token);
   };
 
+  // useEffect(() => {
+  //   // google.accounts.id.initialize 설정
+  //   (window as any).google?.accounts.id.initialize({
+  //     client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID!,
+  //     callback: handleCallbackResponse,
+  //     auto_select: false, // 자동 One Tap을 비활성화하여 수동으로 호출
+  //   });
+  // }, []);
+
   useEffect(() => {
-    // google.accounts.id.initialize 설정
-    (window as any).google?.accounts.id.initialize({
-      client_id:
-        "795412424002-h96s44dm1b7junqvntu384qk2otab42n.apps.googleusercontent.com",
-      callback: handleCallbackResponse,
-      auto_select: false, // 자동 One Tap을 비활성화하여 수동으로 호출
-    });
-  }, []);
+  // 디버깅 정보 추가
+  // console.log('Current URL:', window.location.href);
+  // console.log('Client ID:', process.env.REACT_APP_GOOGLE_CLIENT_ID);
+  
+  if (!(window as any).google) {
+    console.error('Google script not loaded');
+    return;
+  }
+
+  (window as any).google.accounts.id.initialize({
+    client_id: "704642215458-2og18pmpedr8rc1n1rc2443b86mspdgt.apps.googleusercontent.com",
+    callback: handleCallbackResponse,
+    auto_select: false,
+  });
+}, []);
 
   // 버튼 클릭 시 로그인 과정을 트리거
   const handleLoginClick = () => {
