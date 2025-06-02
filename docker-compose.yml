@@ -22,7 +22,7 @@ services:
 
   frontend:
     build: ./FE
-    container_name: FE
+    container_name: frontend
     expose:
       - "${FRONTEND_PORT}"
     networks:
@@ -33,7 +33,7 @@ services:
 
   backend:
     build: ./BE/undaid
-    container_name: BE
+    container_name: backend
     expose:
       - "${BACKEND_HTTP_PORT}"
       - "${BACKEND_SOCKET_PORT}"
@@ -43,6 +43,7 @@ services:
       redis:
         condition: service_started
     environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/${MYSQL_DATABASE}"
       SPRING_DATASOURCE_USERNAME: ${MYSQL_USER}
       SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD}
       JWT_SECRET: ${JWT_SECRET}
@@ -59,7 +60,7 @@ services:
 
   ai:
     build: ./AI
-    container_name: AI
+    container_name: ai
     expose:
       - "${AI_PORT}"
     environment:
