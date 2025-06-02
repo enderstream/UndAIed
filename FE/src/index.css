@@ -106,9 +106,22 @@ input {
 }
 
 .close-left-sidebar {
-  @apply translate-x-[20rem] px-2 py-1 rounded-r-lg rounded-bl-none top-2 md:translate-x-[19.5rem];
+  transform: translateX(20rem);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0;
+  top: 0.5rem;
 }
 
+@media (min-width: 768px) {
+  .close-left-sidebar {
+    transform: translateX(19.5rem);
+  }
+}
 .close-right-sidebar {
   @apply translate-y-0;
 }
