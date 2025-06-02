@@ -31,7 +31,7 @@
         "semi": false,
         "singleQuote": true,
         "jsxSingleQuote": true,
-        "jsxBracketSameLine": false,
+        "bracketSameLine": false,
         "parser": "typescript"
       }
     },
