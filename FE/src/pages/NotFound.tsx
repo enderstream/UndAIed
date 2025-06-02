@@ -1,5 +1,5 @@
 // import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 //clip-path: inset를 이용해서 보여줄 영역을 지정해 효과를 표현함 (40% 0 61% 0 은 세로 기준 40% ~ 61% 부분을 보여준다는 뜻)
 const styles = `
@@ -113,33 +113,33 @@ const styles = `
 }
 
 
-`;
+`
 
-function NotFound(): JSX.Element {
+const NotFound = (): JSX.Element => {
   return (
     <>
       <style>{styles}</style>
       <div className="min-h-screen bg-black flex flex-col items-center justify-center font-['Oswald'] overflow-hidden relative">
-        <div className="text-center relative">
-          <h1 className="text-white text-2xl ">ERROR!</h1>
-          <div className="glitch-container">
-            <div className="text-white text-[8rem] font-bold mb-5">404</div>
-            <div className="noise-base text-[8rem] font-bold mb-5 noise-effect-1">
+        <div className='text-center relative'>
+          <h1 className='text-white text-2xl '>ERROR!</h1>
+          <div className='glitch-container'>
+            <div className='text-white text-[8rem] font-bold mb-5'>404</div>
+            <div className='noise-base text-[8rem] font-bold mb-5 noise-effect-1'>
               404
             </div>
-            <div className="noise-base text-[8rem] font-bold mb-5 noise-effect-2">
+            <div className='noise-base text-[8rem] font-bold mb-5 noise-effect-2'>
               404
             </div>
-            <div className="noise-base text-[8rem] font-bold mb-5 noise-effect-3">
+            <div className='noise-base text-[8rem] font-bold mb-5 noise-effect-3'>
               404
             </div>
           </div>
-          <p className="text-white text-xl tracking-widest">
+          <p className='text-white text-xl tracking-widest'>
             페이지를 찾을 수 없습니다
           </p>
 
           <button
-            className="mt-5 px-4 py-2
+            className='mt-5 px-4 py-2
                         bg-[#5349507a]
                         border border-[#f74a5c]/60 
                         backdrop-blur-[12.20px] 
@@ -159,14 +159,14 @@ function NotFound(): JSX.Element {
                         active:bg-[#f837644e]
                         active:border-[#f837644e]
                         active:shadow-sm
-    "
+    '
           >
-            <Link to={"/"}>홈으로 돌아가기</Link>
+            <Link to={'/'}>홈으로 돌아가기</Link>
           </button>
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default NotFound;
+export default NotFound

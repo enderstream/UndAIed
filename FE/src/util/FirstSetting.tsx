@@ -25,15 +25,13 @@
 
 // export default FirstSetting;
 
+import { useState } from 'react'
+import AudioPlayer from './AudioPlayer'
+import Setting from './Setting'
+import firstBgm from '../assets/bgm/my-page.mp3'
 
-
-import { useState } from "react";
-import AudioPlayer from "./AudioPlayer";
-import Setting from "./Setting";
-import firstBgm from "../assets/bgm/my-page.mp3";
-
-function FirstSetting() {
-  const [isFirst, setIsFirst] = useState(true);
+const FirstSetting = () => {
+  const [isFirst, setIsFirst] = useState(true)
 
   return (
     <>
@@ -42,21 +40,21 @@ function FirstSetting() {
       )}
       <div>
         <Setting
-          title="원하는 설정을 선택해주세요"
+          title='원하는 설정을 선택해주세요'
           first={isFirst}
           setFirst={setIsFirst}
           isSettingsOpen={isFirst}
           onClose={() => setIsFirst(false)}
         />
         <button
-          className="border border-white"
+          className='border border-white'
           onClick={() => setIsFirst(false)}
         >
           확인
         </button>
       </div>
     </>
-  );
+  )
 }
 
-export default FirstSetting;
+export default FirstSetting

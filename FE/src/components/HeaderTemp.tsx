@@ -1,5 +1,5 @@
-function HeaderTemp() {
-  return <div className="w-screen h-14"></div>;
+const HeaderTemp = () => {
+  return <div className='w-screen h-14' />
 }
 
-export default HeaderTemp;
+export default HeaderTemp

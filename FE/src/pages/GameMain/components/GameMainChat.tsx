@@ -1,19 +1,20 @@
-import { FormEvent, useEffect, useRef, useState } from "react";
-import { useSocket } from "../../../hooks/useSocket";
+import type { FormEvent } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useSocket } from '../../../hooks/useSocket'
 
 interface ChatMessage {
-  nickname: string;
-  message: string;
+  nickname: string
+  message: string
 }
 
-function GameMainChat() {
-  const socket = useSocket();
+const GameMainChat = () => {
+  const socket = useSocket()
   const blockStyle =
-    "bg-[#0000006c] border border-[#f74a5c]/40 backdrop-blur-[12.20px] text-[#fffbfb] rounded-[5px] transition-all duration-200";
-  const [chatList, setChatList] = useState<ChatMessage[]>([]);
-  const [chat, setChat] = useState("");
-  const chatContainerRef = useRef<HTMLDivElement>(null);
-  const [isScrolledToBottom, setIsScrolledToBottom] = useState(true);
+    'bg-[#0000006c] border border-[#f74a5c]/40 backdrop-blur-[12.20px] text-[#fffbfb] rounded-[5px] transition-all duration-200'
+  const [chatList, setChatList] = useState<ChatMessage[]>([])
+  const [chat, setChat] = useState('')
+  const chatContainerRef = useRef<HTMLDivElement>(null)
+  const [isScrolledToBottom, setIsScrolledToBottom] = useState(true)
 
   // const checkScrollBottom = () => {
   //   if (chatContainerRef.current) {
@@ -26,37 +27,36 @@ function GameMainChat() {
 
   const scrollToBottom = () => {
     if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTop =
-        chatContainerRef.current.scrollHeight;
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight
     }
-  };
+  }
 
   useEffect(() => {
-    if (!socket) return;
+    if (!socket) return
 
-    socket.on("lobby:chat", (message: ChatMessage) => {
-      setChatList((prev) => [...prev, message]);
+    socket.on('lobby:chat', (message: ChatMessage) => {
+      setChatList(prev => [...prev, message])
       if (isScrolledToBottom) {
-        setTimeout(scrollToBottom, 0);
+        setTimeout(scrollToBottom, 0)
       }
-    });
+    })
 
     return () => {
-      socket.off("lobby:chat");
-    };
-  }, [socket, isScrolledToBottom]);
+      socket.off('lobby:chat')
+    }
+  }, [socket, isScrolledToBottom])
 
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    if (chat.trim() === "") return;
-    const message = chat;
-    setChat(""); // 입력창 초기화
+    e.preventDefault()
+    if (chat.trim() === '') return
+    const message = chat
+    setChat('') // 입력창 초기화
 
-    socket?.emit("lobby:chat", message);
-    setTimeout(scrollToBottom, 0);
-    setIsScrolledToBottom(true);
-  };
-  <style>
+    socket?.emit('lobby:chat', message)
+    setTimeout(scrollToBottom, 0)
+    setIsScrolledToBottom(true)
+  }
+  ;<style>
     {`
           .custom-scrollbar::-webkit-scrollbar {
             width: 6px;
@@ -76,16 +76,16 @@ function GameMainChat() {
             background: #ff6b7d;
           }
         `}
-  </style>;
+   </style>
   return (
     <div className={`flex flex-col p-4 bg-[#0000008f] h-52   ${blockStyle} `}>
       <div
         ref={chatContainerRef}
-        className="custom-scrollbar mb-3 flex-1 min-h-[8rem] max-h-[12rem] overflow-y-auto"
+        className='custom-scrollbar mb-3 flex-1 min-h-[8rem] max-h-[12rem] overflow-y-auto'
       >
         {chatList.map((msg, index) => (
-          <div key={index} className="mb-1">
-            <span className="font-bold mr-3">{msg.nickname} </span>
+          <div key={index} className='mb-1'>
+            <span className='font-bold mr-3'>{msg.nickname} </span>
             <span>{msg.message}</span>
           </div>
         ))}
@@ -93,14 +93,14 @@ function GameMainChat() {
       <form onSubmit={handleSubmit}>
         <input
           value={chat}
-          onChange={(e) => setChat(e.target.value)}
-          placeholder="채팅 입력"
-          type="text"
+          onChange={e => setChat(e.target.value)}
+          placeholder='채팅 입력'
+          type='text'
           className={`p-4 h-8 w-full bg-[#241818de] ${blockStyle} transition-colors duration-50 focus:border-2 focus:border-[#ff6767] focus:outline-none focus:bg-[#1122338e]`}
         />
       </form>
     </div>
-  );
+  )
 }
 
-export default GameMainChat;
+export default GameMainChat
