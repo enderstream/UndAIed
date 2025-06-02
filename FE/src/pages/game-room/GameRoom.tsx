@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { toast } from 'sonner'
-import SystemBubble from '../GamePlay/components/SystemBubble'
+import SystemBubble from '../game-play/components/SystemBubble'
 import ChatForm from './components/ChatForm'
 import { useSocket } from '../../hooks/useSocket'
 import LeftSideBar from './components/LeftSideBar'
@@ -381,7 +381,7 @@ const GameRoom = () => {
         <Settings
           title='설정'
           first={false}
-          setFirst={() => {}}
+          setFirst={() => { }}
           onClose={() => setIsSettingsOpen(false)}
           isSettingsOpen={isSettingsOpen}
         />

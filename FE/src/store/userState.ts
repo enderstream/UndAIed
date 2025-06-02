@@ -1,5 +1,5 @@
 import { atom } from 'recoil'
-import type { IUser } from '../types/User'
+import type { IUser } from '../types/user'
 import persistAtom from './persistAtom'
 
 export const userState = atom<IUser>({

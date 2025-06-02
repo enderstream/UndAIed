@@ -4,7 +4,7 @@ import type { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import GameProfile from './GameProfile'
 import DiedProfile from './DiedProfile'
-import EmptyProfile from '../../GameRoom/components/EmptyProfile'
+import EmptyProfile from '../../game-room/components/EmptyProfile'
 import type { IAnonimus } from '../../../types/gameplay'
 import type { IMessage } from '../../../types/gameroom'
 

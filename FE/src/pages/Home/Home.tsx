@@ -1,32 +1,32 @@
 import { useState, useEffect } from 'react'
 
 import { Link } from 'react-router-dom'
-import Header from '../../components/Header'
-import HeaderTemp from '../../components/HeaderTemp'
+import Header from '@/components/Header'
+import HeaderTemp from '@/components/HeaderTemp'
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 // import {  faChevronDown,  faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import Logo from '../../assets/svg-icon/game_logo.svg'
+import Logo from '@/assets/svg-icon/game_logo.svg'
 import InfoContainer from './components/InfoContainer'
 
 import { useRecoilValue } from 'recoil'
-import { userState } from '../../store/userState'
-import LoginContainer from './components/LoginContainer'
-import LogoutContainer from './components/LogoutContainer'
+import { userState } from '@/store/userState'
+import LoginContainer from '@/pages/home/components/LoginContainer'
+import LogoutContainer from '@/pages/home/components/LogoutContainer'
 
-import { preloadAudio } from '../../util/AudioCache'
-import lobbyBgm from '../../assets/bgm/lobby.mp3'
-import gameRoomBgm from '../../assets/bgm/game-room.mp3'
-import clickSound from '../../assets/bgm/click.mp3'
-import myPageBgm from '../../assets/bgm/my-page.mp3'
-import introBgm from '../../assets/bgm/intro.mp3'
-import slideSound from '../../assets/bgm/slide.mp3'
+import { preloadAudio } from '@/util/AudioCache'
+import lobbyBgm from '@/assets/bgm/lobby.mp3'
+import gameRoomBgm from '@/assets/bgm/game-room.mp3'
+import clickSound from '@/assets/bgm/click.mp3'
+import myPageBgm from '@/assets/bgm/my-page.mp3'
+import introBgm from '@/assets/bgm/intro.mp3'
+import slideSound from '@/assets/bgm/slide.mp3'
 
-import Img1 from '../../assets/tutorial/1.png'
-import Img2 from '../../assets/tutorial/2.png'
-import Img3 from '../../assets/tutorial/3.png'
-import Img4 from '../../assets/tutorial/4.png'
-import Img5 from '../../assets/tutorial/5.png'
+import Img1 from '@/assets/tutorial/1.png'
+import Img2 from '@/assets/tutorial/2.png'
+import Img3 from '@/assets/tutorial/3.png'
+import Img4 from '@/assets/tutorial/4.png'
+import Img5 from '@/assets/tutorial/5.png'
 
 // interface IBoard {
 //   id: number;
@@ -145,9 +145,8 @@ const Home = () => {
                 <div
                   className='absolute top-0 left-0 w-auto h-[90%] flex gap-8 transition-transform'
                   style={{
-                    transform: `translateX(calc(-${infoScrollRatio}% + ${
-                      (infoScrollRatio / 100) * 720
-                    }px))`,
+                    transform: `translateX(calc(-${infoScrollRatio}% + ${(infoScrollRatio / 100) * 720
+                      }px))`,
                   }}
                 >
                   <InfoContainer

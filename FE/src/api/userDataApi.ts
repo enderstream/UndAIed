@@ -1,5 +1,5 @@
-import type { ProfileUpdate } from '../types/User'
-import { apiClient } from './apiClient'
+import type { ProfileUpdate } from '../types/user'
+import { apiClient } from '@/api/apiClient'
 
 export const updateProfile = async (data: ProfileUpdate) => {
   const response = await apiClient.patch('api/v1/user/profile', data)

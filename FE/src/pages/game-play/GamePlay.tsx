@@ -6,8 +6,8 @@ import PlayerIcon3 from '../../assets/player-icon/player-icon-3.svg'
 import PlayerIcon4 from '../../assets/player-icon/player-green.svg'
 import PlayerIcon5 from '../../assets/player-icon/player-icon-4.svg'
 import PlayerIcon6 from '../../assets/player-icon/player-icon-5.svg'
-import PlayerIcon7 from '../../assets/player-icon/player-white.svg'
-import PlayerIcon8 from '../../assets/player-icon/player-pink.svg'
+import PlayerIcon7 from '../../assets/player-icon/player-icon-8.svg'
+import PlayerIcon8 from '../../assets/player-icon/player-icon-6.svg'
 // import PlayerIcon1 from "../../assets/game-icon/1.webp";
 // import PlayerIcon2 from "../../assets/game-icon/2.webp";
 // import PlayerIcon3 from "../../assets/game-icon/3.webp";
@@ -345,7 +345,7 @@ const GamePlay = () => {
           stage={gameInfo?.stage}
           round={gameInfo?.round}
           onSettingsClick={() => setIsSettingsOpen(true)}
-          // onLeaveRoom={handleLeaveRoom}
+        // onLeaveRoom={handleLeaveRoom}
         />
         <div className='lg:pl-78'>
           <div className='max-w-3xl mx-auto xl:max-w-none xl:ml-0 xl:mr-128'>
@@ -393,7 +393,7 @@ const GamePlay = () => {
         <Settings
           title='설정'
           first={false}
-          setFirst={() => {}}
+          setFirst={() => { }}
           onClose={() => setIsSettingsOpen(false)}
           isSettingsOpen={isSettingsOpen}
         />

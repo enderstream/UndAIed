@@ -2,7 +2,7 @@ import { useState } from 'react'
 // import leftIcon from "../../../assets/icon/left.svg";
 // import rightIcon from "../../../assets/icon/right.svg";
 import { useUserProfile } from '../../../hooks/useUserData'
-import type { Game } from '../../../types/User'
+import type { Game } from '../../../types/user'
 import GamePlayDetail from './GamePlayDetail'
 import { useClickSound } from '../../../hooks/useClickSound'
 

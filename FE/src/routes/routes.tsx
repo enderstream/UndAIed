@@ -101,21 +101,21 @@
 import { createBrowserRouter } from 'react-router-dom'
 import App from '../App'
 import NotFound from '../pages/NotFound'
-import Home from '../pages/Home/Home'
+import Home from '../pages/home/Home'
 import Policy from '../pages/Policy'
-import GameRoom from '../pages/GameRoom/GameRoom'
-import GamePlay from '../pages/GamePlay/GamePlay'
+import GameRoom from '../pages/game-room/GameRoom'
+import GamePlay from '../pages/game-play/GamePlay'
 import GameMain from '../pages/GameMain/GameMain'
-import Board from '../pages/Board/Board'
+import Board from '../pages/board/Board'
 import User from '../pages/User'
 import Log from '../pages/Log'
 import BoardWrite from '../pages/BoardWrite'
-import Friends from '../pages/Friends/Friends'
-import Game from '../pages/Game/Game'
-import GameMyPage from '../pages/GameMyPage/GameMyPage'
+import Friends from '../pages/friends/Friends'
+import Game from '../pages/game/Game'
+import GameMyPage from '../pages/game-my-page/GameMyPage'
 import Signup from '../pages/Signup'
-import BoardDetail from '../pages/Board/BoardDetail'
-import BoardEdit from '../pages/Board/components/BoardEdit'
+import BoardDetail from '../pages/board/BoardDetail'
+import BoardEdit from '../pages/board/components/BoardEdit'
 
 const router = createBrowserRouter([
   {
@@ -128,7 +128,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/policy',
-        element: <Policy onAccept={() => {}} onDecline={() => {}} />,
+        element: <Policy onAccept={() => { }} onDecline={() => { }} />,
       },
       {
         path: '/signup',

@@ -1,5 +1,5 @@
-import type { BoardRequest } from '../types/board'
-import { apiClient } from '../api/apiClient'
+import type { BoardRequest } from '@/types/board'
+import { apiClient } from '@/api/apiClient'
 
 export const boardApi = {
   getPosts: (category: number, page: number) =>

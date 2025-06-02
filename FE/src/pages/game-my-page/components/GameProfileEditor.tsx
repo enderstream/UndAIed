@@ -1,7 +1,7 @@
 // GameProfileEditor.tsx
 import { useState } from 'react'
 import { ProfileEditModal } from './ProfileEditModal'
-import type { GameUserInfoProps } from '../../../types/User'
+import type { GameUserInfoProps } from '../../../types/user'
 
 // 8개의 아바타 이미지 import
 import { useUpdateProfile } from '../../../hooks/useUserData'
@@ -80,10 +80,9 @@ export const GameProfileEditor = ({
                   onClick={() => setSelectedProfileImage(avatar.id)}
                   className={`
                     ${blockStyle}
-                    ${
-                      selectedProfileImage === avatar.id
-                        ? 'border-[#f74a5c] shadow-[0_0_15px_0] shadow-[#F74A5C]'
-                        : ''
+                    ${selectedProfileImage === avatar.id
+                      ? 'border-[#f74a5c] shadow-[0_0_15px_0] shadow-[#F74A5C]'
+                      : ''
                     }
                     p-2 cursor-pointer transition-all duration-200 hover:border-[#f74a5c]
                   `}

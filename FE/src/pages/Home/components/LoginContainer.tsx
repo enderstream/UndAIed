@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom'
-import type { IUser } from '../../../types/User'
+import type { IUser } from '../../../types/user'
 import { userState } from '../../../store/userState'
 import { useRecoilState, useSetRecoilState } from 'recoil'
 import IntroOverlay from '../../../util/IntroOverlay'
 import { useState } from 'react'
-import Policy from '../../../pages/Policy'
+import Policy from '../../Policy'
 import FirstSetting from '../../../util/FirstSetting'
 import { setShowIntroState } from '../../../store/showState'
 import { getPlayerIcon } from '../../../util/PlayerIcon'
@@ -199,10 +199,10 @@ const LoginContainer = ({ userInfo }: ILoginContainer) => {
                   {userInfo.totalWin + userInfo.totalLose === 0
                     ? '0'
                     : (
-                        (userInfo.totalWin /
-                          (userInfo.totalWin + userInfo.totalLose)) *
-                        100
-                      ).toFixed(1)}
+                      (userInfo.totalWin /
+                        (userInfo.totalWin + userInfo.totalLose)) *
+                      100
+                    ).toFixed(1)}
                   %
                 </span>
               </div>
