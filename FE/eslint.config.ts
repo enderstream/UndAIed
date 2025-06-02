@@ -1,11 +1,8 @@
-// eslint.config.ts
 import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import react from 'eslint-plugin-react'
-// import jsxA11y from 'eslint-plugin-jsx-a11y' // flat config 지원 확인 필요, 임시 비활성화
-// import importPlugin from 'eslint-plugin-import' // flat config 지원 불완전으로 임시 비활성화
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
@@ -58,8 +55,6 @@ export default tseslint.config(
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       'react': react,
-      // 'jsx-a11y': jsxA11y, // flat config 지원 확인 필요, 임시 비활성화
-      // 'import': importPlugin, // flat config 지원 불완전으로 임시 비활성화
     },
 
     // ============================================================
@@ -70,14 +65,6 @@ export default tseslint.config(
         version: '19.0.0',
         runtime: 'automatic', // React 19 JSX Runtime
       },
-      // import resolver는 import 플러그인 활성화 시에만 사용
-      // 'import/resolver': {
-      //   typescript: {
-      //     alwaysTryTypes: true,
-      //     project: './tsconfig.json',
-      //   },
-      // },
-      // 'import/extensions': ['.ts', '.tsx'],
     },
 
     // ============================================================
@@ -117,25 +104,6 @@ export default tseslint.config(
       'react/jsx-closing-tag-location': 'warn',
       'react/jsx-curly-spacing': ['warn', 'never'],
       'react/jsx-equals-spacing': ['warn', 'never'],
-      // 다음 룰들은 Prettier가 처리하므로 비활성화
-      // 'react/jsx-first-prop-new-line': 'off',
-      // 'react/jsx-indent': 'off', 
-      // 'react/jsx-indent-props': 'off',
-      // 'react/jsx-max-props-per-line': 'off',
-
-      // ========== Import 관련 룰 (기본만) ==========
-      // 주의: eslint-plugin-import의 flat config 지원이 불완전함
-      // 필요시 eslint-plugin-import-x로 교체 고려
-
-      // ========== 접근성 관련 (jsx-a11y 기본만) ==========
-      // 주의: jsx-a11y의 flat config 지원 확인 필요
-      // 'jsx-a11y/anchor-is-valid': 'warn',
-      // 'jsx-a11y/alt-text': 'error',
-      // 'jsx-a11y/aria-props': 'error',
-      // 'jsx-a11y/aria-proptypes': 'error',
-      // 'jsx-a11y/aria-unsupported-elements': 'error',
-      // 'jsx-a11y/click-events-have-key-events': 'warn',
-      // 'jsx-a11y/no-static-element-interactions': 'warn',
 
       // ========== TypeScript 전용 강화 룰 ==========
       '@typescript-eslint/no-unused-vars': [

@@ -76,7 +76,7 @@ const GameMainChat = () => {
             background: #ff6b7d;
           }
         `}
-  </style>
+   </style>
   return (
     <div className={`flex flex-col p-4 bg-[#0000008f] h-52   ${blockStyle} `}>
       <div
