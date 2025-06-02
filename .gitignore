@@ -6,7 +6,6 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
@@ -39,14 +38,21 @@ node_modules/
 .yarn-integrity
 .pnpm-debug.log*
 
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# Java (BE 디렉토리용)
+*.class
+*.jar
+*.zip
+*.tar.gz
+*.rar
+.mtj.tmp/
+hs_err_pid*
+replay_pid*
+
+# Gradle
+.gradle
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
 
 # Build and Distribution
 dist/
@@ -56,7 +62,16 @@ target/
 out/
 *.local
 
-# Virtual Environments
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment Variables
 .env
 .venv
 env/
@@ -78,26 +93,10 @@ venv.bak/
 .springBeans
 .sts4-cache
 *.sw?
-
-# Java (BE 디렉토리용)
-*.class
-*.jar
-*.zip
-*.tar.gz
-*.rar
-.mtj.tmp/
-hs_err_pid*
-replay_pid*
-
-# Gradle
-.gradle
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-# Database
-!mysql/init/
-!mysql/init/*.sql
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
 
 # System files
 .DS_Store
@@ -116,7 +115,11 @@ Icon
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
 
-# Configuration
+# Database
+!mysql/init/
+!mysql/init/*.sql
+
+# Configuration Files
 /BE/undaid/src/main/resources/application-secrets.properties
 /BE/undaid/src/main/resources/application.properties
 
