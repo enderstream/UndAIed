@@ -75,10 +75,7 @@ const LeftSideBar = ({
             icon={leftChervon}
           />
         ) : (
-          <FontAwesomeIcon
-            icon={menu}
-            className='text-white p-1 w-4 h-4'
-          />
+          <FontAwesomeIcon icon={menu} className='text-white p-1 w-4 h-4' />
         )}
       </button>
       <div
@@ -135,10 +132,7 @@ const LeftSideBar = ({
               />
             </button> */}
             <button onClick={onSettingsClick}>
-              <FontAwesomeIcon
-                icon={gear}
-                className='text-white p-1 w-5 h-5'
-              />
+              <FontAwesomeIcon icon={gear} className='text-white p-1 w-5 h-5' />
             </button>
             {/* <button onClick={copyCurrentURL}>
               <FontAwesomeIcon

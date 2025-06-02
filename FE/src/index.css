@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 * {
   box-sizing: border-box;
@@ -7,11 +7,10 @@
   --primary-black: rgb(7, 7, 10);
 }
 
-
 /* 크롬, 사파리, 오페라 등 웹킷 엔진 */
 html::-webkit-scrollbar {
-  display: none; 
-}   
+  display: none;
+}
 
 input {
   outline: none;

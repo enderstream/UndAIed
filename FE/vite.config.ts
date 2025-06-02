@@ -6,7 +6,7 @@ import { fileURLToPath, URL } from 'node:url'
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss(), // 새로운 Tailwind Vite 플러그인
+    tailwindcss(),
   ],
   resolve: {
     alias: {
@@ -21,7 +21,6 @@ export default defineConfig({
     strictPort: true,
     port: 5173,
     cors: true,
-    // 명시적으로 허용할 호스트 추가
     allowedHosts: ['www.undaied.com', 'localhost']
   }
 })

@@ -366,10 +366,7 @@ const GamePlay = () => {
                     )
                   }
                 })}
-                <div
-                  ref={scrollRef}
-                  className='chat-input-temp h-18 w-full'
-                />
+                <div ref={scrollRef} className='chat-input-temp h-18 w-full' />
                 <div className='chat-input fixed h-10 bottom-4 w-[calc(90rem-21rem-33.5rem-2rem)]'>
                   <ChatForm
                     isDead={playerInfo ? playerInfo.died : true}

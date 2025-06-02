@@ -150,10 +150,7 @@ const RightSideBar = ({ players, messages }: RightSideBarProps) => {
         className='fixed z-30 top-2 right-4 text-white p-3 rounded-md bg-gray-800 xl:translate-x-[150%]'
         onClick={() => setIsRightOpen(prev => !prev)}
       >
-        <FontAwesomeIcon
-          icon={peopleGroup}
-          className='text-white w-5 h-5'
-        />
+        <FontAwesomeIcon icon={peopleGroup} className='text-white w-5 h-5' />
       </button>
     </>
   )
