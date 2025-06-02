@@ -1,25 +1,21 @@
-services:
-  nginx:
-    image: nginx:alpine
-    container_name: nginx
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./nginx/conf.d:/etc/nginx/conf.d:rw  # 이거 rw로 해줘야함
-      - /etc/letsencrypt:/etc/letsencrypt:ro
-      - /etc/ssl/certs:/etc/ssl/certs:ro
-      - /etc/nginx/sites-available:/etc/nginx/sites-available:ro
-      # - /var/log/nginx:/var/log/nginx
-      - ./nginx/logs:/var/log/nginx
-      - ./nginx/html:/usr/share/nginx/html:ro
-    networks:
-      - undaied
-    restart: always
-    environment:
-      TZ: Asia/Seoul
+# services:
+#   nginx:
+#     build: ./nginx
+#     container_name: nginx
+#     ports:
+#       - "80:80"
+#       - "443:443"
+#     volumes:
+#       # 외부 인증서 및 시스템 파일
+#       - /etc/letsencrypt:/etc/letsencrypt:ro
+#       - /etc/ssl/certs:/etc/ssl/certs:ro
+#       # 런타임에 변경 가능한 파일들만 볼륨 마운트
+#       - ./nginx/conf.d:/etc/nginx/conf.d:rw
+#       - ./nginx/logs:/var/log/nginx
+#     networks:
+#       - undaied
+#     restart: always
 
-networks:
-  undaied:
-    external: true  # 기존 네트워크를 사용하기 위한 설정
+# networks:
+#   undaied:
+#     external: true

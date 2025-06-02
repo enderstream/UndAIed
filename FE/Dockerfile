@@ -1,25 +1,38 @@
-FROM node:22
+# Build stage
+FROM node:22 AS build
+
+# pnpm 설치
+RUN npm install -g pnpm@latest
+
 WORKDIR /frontend
 
-# 1) package.json(lock 포함) 복사
-COPY package*.json ./
+# 의존성 파일들 먼저 복사 (Docker 캐싱 최적화)
+COPY package.json pnpm-lock.yaml ./
+COPY pnpm-workspace.yaml* ./
 
-# 2) 기존 lockfile/node_modules 삭제 → npm install 로 다시 설치
-RUN rm -rf node_modules package-lock.json \
- && npm install
+# 의존성 설치
+RUN pnpm install --frozen-lockfile
 
-# 3) serve 글로벌 설치 + 캐시 정리
-RUN npm install -g serve \
- && npm cache clean --force
-
-# 4) 앱 소스 복사
+# 소스 코드 복사
 COPY . .
 
-# 5) 프로덕션 빌드
-RUN npm run build
+# 프로덕션 빌드
+RUN pnpm build
 
-# 6) devDependencies 제거 (이미 빌드 끝난 후)
-RUN npm prune --omit=dev
+# Production stage
+FROM node:22-alpine AS prod
 
-EXPOSE 5173
-CMD ["serve", "-s", "dist", "-l", "5173"]
+# serve 설치
+RUN npm install -g serve@latest
+
+WORKDIR /app
+
+# 빌드된 파일들만 복사
+COPY --from=build /frontend/dist ./dist
+
+# 보안을 위한 non-root 유저
+RUN adduser -D -s /bin/sh user
+RUN chown -R user:user /app
+USER user
+
+CMD serve -s dist -l 5173
