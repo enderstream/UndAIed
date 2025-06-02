@@ -1,64 +1,64 @@
-import { useNavigate } from "react-router-dom";
-import { IUser } from "../../../types/User";
-import { userState } from "../../../store/userState";
-import { useRecoilState, useSetRecoilState } from "recoil";
-import IntroOverlay from "../../../util/IntroOverlay";
-import { useState } from "react";
-import Policy from "../../../pages/Policy";
-import FirstSetting from "../../../util/FirstSetting";
-import { setShowIntroState } from "../../../store/showState";
-import { getPlayerIcon } from "../../../util/PlayerIcon";
+import { useNavigate } from 'react-router-dom'
+import type { IUser } from '../../../types/User'
+import { userState } from '../../../store/userState'
+import { useRecoilState, useSetRecoilState } from 'recoil'
+import IntroOverlay from '../../../util/IntroOverlay'
+import { useState } from 'react'
+import Policy from '../../../pages/Policy'
+import FirstSetting from '../../../util/FirstSetting'
+import { setShowIntroState } from '../../../store/showState'
+import { getPlayerIcon } from '../../../util/PlayerIcon'
 
 interface ILoginContainer {
-  userInfo: IUser;
+  userInfo: IUser
 }
 
-function LoginContainer({ userInfo }: ILoginContainer) {
-  const navigate = useNavigate();
-  const setUser = useSetRecoilState(userState);
-  const [showIntro, setShowIntro] = useRecoilState(setShowIntroState);
-  const [showPolicy, setShowPolicy] = useState(false);
-  const [showSetting, setShowSetting] = useState(false);
+const LoginContainer = ({ userInfo }: ILoginContainer) => {
+  const navigate = useNavigate()
+  const setUser = useSetRecoilState(userState)
+  const [showIntro, setShowIntro] = useRecoilState(setShowIntroState)
+  const [showPolicy, setShowPolicy] = useState(false)
+  const [showSetting, setShowSetting] = useState(false)
 
   const checkUserPolicy = () => {
-    const userPersistData = localStorage.getItem("userPersist");
+    const userPersistData = localStorage.getItem('userPersist')
     if (userPersistData) {
-      const userData = JSON.parse(userPersistData);
-      const userId = userData.userState.email; // 현재 로그인된 사용자의 ID
+      const userData = JSON.parse(userPersistData)
+      const userId = userData.userState.email // 현재 로그인된 사용자의 ID
 
-      const policyData = localStorage.getItem(`policy`);
+      const policyData = localStorage.getItem(`policy`)
       if (policyData) {
-        const policyEmailData = JSON.parse(policyData);
-        const policyEmail = policyEmailData.userEmail;
+        const policyEmailData = JSON.parse(policyData)
+        const policyEmail = policyEmailData.userEmail
         if (policyEmail === userId && policyEmailData.agreed) {
-          return true;
+          return true
         } else {
-          return false;
+          return false
         }
       }
 
-      return policyData ? JSON.parse(policyData).agreed : false;
+      return policyData ? JSON.parse(policyData).agreed : false
     }
-    return false;
-  };
+    return false
+  }
 
   // 게임 시작 버튼 클릭 핸들러
   const handleGameStart = () => {
-    const policyAgreed = checkUserPolicy();
+    const policyAgreed = checkUserPolicy()
 
     if (!policyAgreed) {
-      setShowPolicy(true);
+      setShowPolicy(true)
     } else {
-      setShowIntro(true);
+      setShowIntro(true)
     }
-  };
+  }
 
   // Policy 동의 처리
   const handlePolicyAccept = () => {
-    const userPersistData = localStorage.getItem("userPersist");
+    const userPersistData = localStorage.getItem('userPersist')
     if (userPersistData) {
-      const userData = JSON.parse(userPersistData);
-      const userId = userData.userState.email;
+      const userData = JSON.parse(userPersistData)
+      const userId = userData.userState.email
 
       localStorage.setItem(
         `policy`,
@@ -66,20 +66,20 @@ function LoginContainer({ userInfo }: ILoginContainer) {
           userEmail: userId,
           agreed: true,
           timestamp: new Date().toISOString(),
-        }),
-      );
+        })
+      )
     }
 
-    setShowPolicy(false);
-    setShowSetting(true);
-  };
+    setShowPolicy(false)
+    setShowSetting(true)
+  }
 
   // Policy 거부 처리
   const handlePolicyDecline = () => {
-    const userPersistData = localStorage.getItem("userPersist");
+    const userPersistData = localStorage.getItem('userPersist')
     if (userPersistData) {
-      const userData = JSON.parse(userPersistData);
-      const userId = userData.userState.email;
+      const userData = JSON.parse(userPersistData)
+      const userId = userData.userState.email
 
       localStorage.setItem(
         `policy`,
@@ -87,26 +87,26 @@ function LoginContainer({ userInfo }: ILoginContainer) {
           userEmail: userId,
           agreed: false,
           timestamp: new Date().toISOString(),
-        }),
-      );
+        })
+      )
     }
 
-    setShowPolicy(false);
-  };
+    setShowPolicy(false)
+  }
 
   // 로그아웃 처리
   const handleLogout = () => {
     setUser({
       isLogin: false,
-      token: "",
-      email: "",
-      nickname: "",
+      token: '',
+      email: '',
+      nickname: '',
       totalWin: 0,
       totalLose: 0,
       profileImage: 0,
-    });
-    navigate("/");
-  };
+    })
+    navigate('/')
+  }
 
   return (
     <>
@@ -155,7 +155,7 @@ function LoginContainer({ userInfo }: ILoginContainer) {
       `}
       </style>
 
-      <div className="flex flex-col w-full items-center">
+      <div className='flex flex-col w-full items-center'>
         {showIntro && <IntroOverlay />}
         {showSetting && <FirstSetting />}
         {showPolicy && (
@@ -164,40 +164,40 @@ function LoginContainer({ userInfo }: ILoginContainer) {
             onDecline={handlePolicyDecline}
           />
         )}
-        <div className="overflow-hidden border mb-8 bg-black">
-          <button onClick={handleGameStart} className="game-button">
+        <div className='overflow-hidden border mb-8 bg-black'>
+          <button onClick={handleGameStart} className='game-button'>
             GAME START
           </button>
         </div>
-        <div className="w-[22.5rem] h-[10rem] flex justify-center items-center bg-black text-white border-2 border-[#822424] rounded-sm">
-          <div className="w-24 h-24 flex justify-center items-center mr-5">
+        <div className='w-[22.5rem] h-[10rem] flex justify-center items-center bg-black text-white border-2 border-[#822424] rounded-sm'>
+          <div className='w-24 h-24 flex justify-center items-center mr-5'>
             <img
-              className="w-28 h-28"
+              className='w-28 h-28'
               src={getPlayerIcon(userInfo.profileImage)}
-              alt=""
+              alt=''
             />
           </div>
-          <div className="flex flex-col">
-            <div className="flex items-center justify-between text-lg pb-0.5">
-              <div className="font-semibold">{userInfo.nickname}님</div>
+          <div className='flex flex-col'>
+            <div className='flex items-center justify-between text-lg pb-0.5'>
+              <div className='font-semibold'>{userInfo.nickname}님</div>
               <button
-                className="text-[11px] h-6 ml-3 border-[1px] rounded-sm px-2 hover:bg-[#4e4e4e60] transition-colors flex items-center justify-center"
+                className='text-[11px] h-6 ml-3 border-[1px] rounded-sm px-2 hover:bg-[#4e4e4e60] transition-colors flex items-center justify-center'
                 onClick={handleLogout}
               >
                 로그아웃
               </button>
             </div>
-            <h2 className="text-sm">{userInfo.email}</h2>
-            <div className="text-xs flex items-center space-x-2">
-              <span className="text-red-400">승률</span>
-              <div className="flex items-center space-x-1">
+            <h2 className='text-sm'>{userInfo.email}</h2>
+            <div className='text-xs flex items-center space-x-2'>
+              <span className='text-red-400'>승률</span>
+              <div className='flex items-center space-x-1'>
                 <span>{userInfo.totalWin}승</span>
                 <span>|</span>
                 <span>{userInfo.totalLose}패</span>
                 <span>|</span>
                 <span>
                   {userInfo.totalWin + userInfo.totalLose === 0
-                    ? "0"
+                    ? '0'
                     : (
                         (userInfo.totalWin /
                           (userInfo.totalWin + userInfo.totalLose)) *
@@ -211,7 +211,7 @@ function LoginContainer({ userInfo }: ILoginContainer) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default LoginContainer;
+export default LoginContainer

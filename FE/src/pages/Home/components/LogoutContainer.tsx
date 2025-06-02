@@ -1,22 +1,22 @@
-import axios from "axios";
+import axios from 'axios'
 // import GoogleLoginButton from "./GoogleLoginBtn";
-import { useSetRecoilState } from "recoil";
-import { useNavigate } from "react-router";
-import { userState } from "../../../store/userState";
-import GoogleLoginButton2 from "./GoogleLoginBtn2";
-import { HashLink } from "react-router-hash-link";
+import { useSetRecoilState } from 'recoil'
+import { useNavigate } from 'react-router'
+import { userState } from '../../../store/userState'
+import GoogleLoginButton2 from './GoogleLoginBtn2'
+import { HashLink } from 'react-router-hash-link'
 
-function LogoutContainer() {
-  const setUser = useSetRecoilState(userState);
-  const navigate = useNavigate();
+const LogoutContainer = () => {
+  const setUser = useSetRecoilState(userState)
+  const navigate = useNavigate()
 
   const handleTokenReceive = async (token: string) => {
     try {
       // 서버로 토큰 전송
       const response = await axios.post(
-        import.meta.env.VITE_API_URL + "/api/v1/user",
-        { token },
-      );
+        `${import.meta.env.VITE_API_URL}/api/v1/user`,
+        { token }
+      )
       // 서버 응답 확인
 
       // 응답이 성공인 경우
@@ -29,7 +29,7 @@ function LogoutContainer() {
           totalWin,
           totalLose,
           profileImage,
-        } = response.data.data;
+        } = response.data.data
 
         // Recoil userState에 사용자 정보 저장
         setUser({
@@ -40,36 +40,36 @@ function LogoutContainer() {
           totalWin,
           totalLose,
           profileImage,
-        });
+        })
 
         // 신규 회원가입(201)과 기존 회원 로그인(200) 분기 처리
         if (response.status === 201) {
           // 회원가입 직후, 성별/나이 등의 추가 정보 입력을 받아야 함
           // 라우팅 예시
-          navigate("/signup");
+          navigate('/signup')
 
           // 혹은 모달로 처리하는 예시
           // setShowSignUpModal(true);
         } else if (response.status === 200) {
           // 이미 회원가입된 사용자이므로 바로 메인 페이지 등으로 이동
-          navigate("/");
+          navigate('/')
         }
       }
     } catch (error: any) {
-      console.error("서버 전송 에러:", error);
+      console.error('서버 전송 에러:', error)
 
       // 에러 응답 상태별로 분기 처리 가능
       if (error.response) {
         if (error.response.status === 400) {
           // 클라이언트 데이터 누락
-          alert("잘못된 요청입니다. 다시 시도해주세요.");
+          alert('잘못된 요청입니다. 다시 시도해주세요.')
         } else if (error.response.status === 500) {
           // 서버 내부 에러
-          alert("서버 에러가 발생했습니다. 잠시 후 다시 시도해주세요.");
+          alert('서버 에러가 발생했습니다. 잠시 후 다시 시도해주세요.')
         }
       }
     }
-  };
+  }
 
   return (
     <>
@@ -117,10 +117,10 @@ function LogoutContainer() {
         }
       `}
       </style>
-      <div id="login" className="flex flex-col w-full items-center">
-        <HashLink to="/#login" smooth></HashLink>
-        <div className="overflow-hidden border mb-8 bg-black">
-          <button onClick={() => navigate("/game")} className="game-button">
+      <div id='login' className='flex flex-col w-full items-center'>
+        <HashLink to='/#login' smooth />
+        <div className='overflow-hidden border mb-8 bg-black'>
+          <button onClick={() => navigate('/game')} className='game-button'>
             GAME START
           </button>
         </div>
@@ -135,7 +135,7 @@ function LogoutContainer() {
       </button> */}
       </div>
     </>
-  );
+  )
 }
 
-export default LogoutContainer;
+export default LogoutContainer
