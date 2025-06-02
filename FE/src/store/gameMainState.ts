@@ -1,7 +1,7 @@
-import { atom } from "recoil";
-import { GameRoom } from "../types/gameRoomInfo";
+import { atom } from 'recoil'
+import type { GameRoom } from '../types/gameRoomInfo'
 
 export const gameMainState = atom<GameRoom[]>({
-  key: "gameRoomsState",
+  key: 'gameRoomsState',
   default: [],
-});
+})

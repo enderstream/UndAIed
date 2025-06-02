@@ -1,8 +1,5 @@
 @tailwind base;
 @tailwind components;
-<<<<<<< HEAD
-@tailwind utilities;
-=======
 @tailwind utilities;
 
 * {
@@ -25,7 +22,8 @@ input {
 }
 
 .background-gradient {
-  background: linear-gradient(0deg, rgb(9, 9, 11), transparent),
+  background:
+    linear-gradient(0deg, rgb(9, 9, 11), transparent),
     radial-gradient(circle at 20% 20%, rgba(237, 71, 71, 0.351), transparent);
 }
 

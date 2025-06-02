@@ -86,6 +86,7 @@ public class GameChatHandler {
                             sendResponse(ackRequest, false, "지금은 토론 시간이 아닙니다.");
                         }
 
+
                     } catch (Exception e) {
                         log.error("채팅 처리 중 오류 발생: {}", e.getMessage(), e);
                         sendResponse(ackRequest, false, "채팅 처리 중 오류가 발생했습니다. 다시 시도해 주세요.");

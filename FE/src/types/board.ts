@@ -1,53 +1,53 @@
 export interface Post {
-  boardId: number;
-  category: string;
-  title: string;
-  viewCnt: number;
-  writerNickname: string;
-  createdAt: string;
-  updatedAt: string;
+  boardId: number
+  category: string
+  title: string
+  viewCnt: number
+  writerNickname: string
+  createdAt: string
+  updatedAt: string
 }
 
 export interface TableProps {
-  currentPosts: Post[];
-  currentPage: number;
-  postPerPage: number;
+  currentPosts: Post[]
+  currentPage: number
+  postPerPage: number
 }
 
 export interface PostListProps {
-  currentPosts: Post[];
-  currentPage: number;
-  postPerPage: number;
-  formatDate: (dateString: string) => string;
+  currentPosts: Post[]
+  currentPage: number
+  postPerPage: number
+  formatDate: (dateString: string) => string
 }
 
 export interface PaginationProps {
-  currentPage: number;
-  endPage: number;
-  startPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
+  currentPage: number
+  endPage: number
+  startPage: number
+  totalPages: number
+  onPageChange: (page: number) => void
 }
 
-export type CategoryType = "bugreport" | "notice" | "write";
+export type CategoryType = 'bugreport' | 'notice' | 'write'
 
 export interface BannerProps {
-  category: CategoryType;
-  bannerImage?: string;
+  category: CategoryType
+  bannerImage?: string
 }
 
 export interface Category {
-  category: string;
+  category: string
 }
 
 export interface BoardRequest {
-  title: string;
-  content: string;
-  category: number;
+  title: string
+  content: string
+  category: number
 }
 export interface UpdatePostParams {
-  id: number;
-  data: Partial<BoardRequest>;
+  id: number
+  data: Partial<BoardRequest>
 }
 
 // export interface BoardDetailResponse {
@@ -61,17 +61,17 @@ export interface UpdatePostParams {
 // }
 
 export interface BoardDetailResponse {
-  timeStamp: string;
-  isSuccess: boolean;
-  status: number;
-  message: string;
+  timeStamp: string
+  isSuccess: boolean
+  status: number
+  message: string
   data: {
-    boardId: number;
-    title: string;
-    content: string;
-    writerNickname: string;
-    category: number;
-    createdAt: string;
-    updatedAt: string;
-  };
+    boardId: number
+    title: string
+    content: string
+    writerNickname: string
+    category: number
+    createdAt: string
+    updatedAt: string
+  }
 }

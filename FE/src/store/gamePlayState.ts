@@ -1,24 +1,24 @@
-import { atom } from "recoil";
+import { atom } from 'recoil'
 
 export const isGameEndState = atom<boolean>({
-  key: "isGameEndState",
+  key: 'isGameEndState',
   default: false,
-});
+})
 
 export const isUserDiedState = atom<boolean>({
-  key: "isUserDiedState",
+  key: 'isUserDiedState',
   default: false,
-});
+})
 
 interface IUserMemo {
-  suspicious: boolean;
-  memo: string;
+  suspicious: boolean
+  memo: string
 }
 
 export const userMemoState = atom<IUserMemo[]>({
-  key: "userMemoState",
+  key: 'userMemoState',
   default: Array.from({ length: 8 }, () => ({
     suspicious: false,
-    memo: "",
+    memo: '',
   })),
-});
+})

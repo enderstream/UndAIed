@@ -1,0 +1,61 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Cache directories
+.cache/
+.temp/
+.tmp/
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.development
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Config files that should keep original formatting
+*.config.js
+*.config.ts
+tailwind.config.js
+postcss.config.js
+vite.config.ts
+eslint.config.ts
+tsconfig.json
+tsconfig.*.json
+
+# TypeScript definition files (usually auto-generated)
+*.d.ts
+!src/types/*.ts
+!src/**/*.d.ts
+
+# Assets
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+*.mp3
+*.mp4
+*.webm
+
+# Other
+*.log
+README.md
+CHANGELOG.md
+LICENSE
+
+# Keep formatting for these TypeScript/TSX files
+# (comment out lines below if you want to format them)
+# src/vite-env.d.ts
