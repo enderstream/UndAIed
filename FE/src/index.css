@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 * {
   box-sizing: border-box;
@@ -122,8 +120,9 @@ input {
     transform: translateX(19.5rem);
   }
 }
+
 .close-right-sidebar {
-  @apply translate-y-0;
+  transform: translateY(0);
 }
 
 /* 투표 애니메이션 */
