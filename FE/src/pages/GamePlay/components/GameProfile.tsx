@@ -99,7 +99,7 @@ const GameProfile = ({
               userMemos[playerNum - 1].suspicious
                 ? 'text-red-700 hover:text-red-600'
                 : 'text-[#cccccc] hover:text-white'
-            }  p-1 w-[1.25rem] h-[1.25rem] mx-1`}
+            }  p-1 w-5 h-5 mx-1`}
           />
         </button>
         {stage === 'vote' ? (
@@ -111,7 +111,7 @@ const GameProfile = ({
           >
             <FontAwesomeIcon
               icon={checkToSlot}
-              className='text-[#cccccc] hover:text-white p-1 w-[1.5rem] h-[1.5rem] mx-1'
+              className='text-[#cccccc] hover:text-white p-1 w-6 h-6 mx-1'
             />
           </button>
         ) : (
@@ -120,7 +120,7 @@ const GameProfile = ({
         <button onClick={handleOpenModal}>
           <FontAwesomeIcon
             icon={noteSticky}
-            className='text-[#cccccc] hover:text-white p-1 w-[1.25rem] h-[1.25rem] mx-1'
+            className='text-[#cccccc] hover:text-white p-1 w-5 h-5 mx-1'
           />
         </button>
         <MemoModal

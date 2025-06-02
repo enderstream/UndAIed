@@ -50,7 +50,7 @@ const SecondCounter = ({
   return (
     <div className='flex flex-col items-center justify-center'>
       <div className='relative'>
-        <svg className='-rotate-90 h-[4rem] w-[4rem]'>
+        <svg className='-rotate-90 h-16 w-16'>
           <circle
             r='24'
             cx='32'
@@ -69,7 +69,7 @@ const SecondCounter = ({
             className='fill-transparent stroke-[#44C553] stroke-[4px]'
           />
         </svg>
-        <div className='text-white absolute text-lg font-semibold flex flex-col items-center w-[4rem] h-20 top-[16px]'>
+        <div className='text-white absolute text-lg font-semibold flex flex-col items-center w-16 h-20 top-[16px]'>
           <span>{seconds}s</span>
         </div>
       </div>

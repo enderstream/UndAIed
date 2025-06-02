@@ -71,13 +71,13 @@ const DiedProfile = ({ nickname, icon, playerNum }: IDiedProfileProps) => {
               userMemos[playerNum - 1].suspicious
                 ? 'text-red-700 hover:text-red-600'
                 : 'text-[#cccccc] hover:text-white'
-            }text-[#cccccc] hover:text-white p-1 w-[1.25rem] h-[1.25rem] mx-1`}
+            }text-[#cccccc] hover:text-white p-1 w-5 h-5 mx-1`}
           />
         </button>
         <button onClick={handleOpenModal}>
           <FontAwesomeIcon
             icon={noteSticky}
-            className='text-[#cccccc] hover:text-white p-1 w-[1.25rem] h-[1.25rem] mx-1'
+            className='text-[#cccccc] hover:text-white p-1 w-5 h-5 mx-1'
           />
         </button>
         <MemoModal

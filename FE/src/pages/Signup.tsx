@@ -47,7 +47,7 @@ const Signup = () => {
       <Header scrollRatio={0} />
       <HeaderTemp />
       <div className='flex justify-center items-center bg-[#f7f7f7] h-[calc(100vh-3.5rem)]'>
-        <div className='relative white-container py-10 flex flex-col items-center bg-[#121212] shadow-lg w-[90%] max-w-lg border-[1px] border-[#f74a5c] rounded-sm text-white mb-[2rem]'>
+        <div className='relative white-container py-10 flex flex-col items-center bg-[#121212] shadow-lg w-[90%] max-w-lg border border-[#f74a5c] rounded-sm text-white mb-8'>
           <h1 className='text-2xl font-bold mb-8'>회원정보 수정</h1>
           <form
             onSubmit={handleSubmit(onValidSubmit, onInvalidSubmit)}

@@ -53,13 +53,13 @@ const GoogleLoginButton: React.FC<GoogleLoginButtonProps> = ({
   return (
     <button
       onClick={handleLoginClick}
-      className='w-[22.5rem] h-9 border border-[#dadce0] bg-white rounded-[20px] flex items-center justify-between px-3 mb-5'
+      className='w-90 h-9 border border-[#dadce0] bg-white rounded-[20px] flex items-center justify-between px-3 mb-5'
     >
       <img src={GoogleIcon} alt='' />
       <div className="text-[#3c4043] text-sm font-medium font-['Roboto']">
         Google 계정으로 로그인
       </div>
-      <div className='w-4 h-[1px]' />
+      <div className='w-4 h-px' />
     </button>
   )
 }

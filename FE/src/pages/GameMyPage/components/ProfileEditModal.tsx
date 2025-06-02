@@ -10,7 +10,7 @@ export const ProfileEditModal = ({ isOpen, onClose, children }: ModalProps) => {
   if (!isOpen) return null
 
   return createPortal(
-    <div className='fixed inset-0 z-[9999]'>
+    <div className='fixed inset-0 z-9999'>
       <div
         className='fixed inset-0 bg-black/50 backdrop-blur-sm'
         onClick={onClose}

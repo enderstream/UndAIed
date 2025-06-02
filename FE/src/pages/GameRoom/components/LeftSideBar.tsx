@@ -71,13 +71,13 @@ const LeftSideBar = ({
       >
         {isOpen ? (
           <FontAwesomeIcon
-            className='text-white p-1 w-[1rem] h-[1rem]'
+            className='text-white p-1 w-4 h-4'
             icon={leftChervon}
           />
         ) : (
           <FontAwesomeIcon
             icon={menu}
-            className='text-white p-1 w-[1rem] h-[1rem]'
+            className='text-white p-1 w-4 h-4'
           />
         )}
       </button>
@@ -85,7 +85,7 @@ const LeftSideBar = ({
         className={`
           fixed -translate-x-full lg:translate-x-0 z-20 inset-0 
           left-[max(0px,calc(50%-45rem))] right-auto
-          w-[21rem] pb-10 pt-6 pl-6 pr-4 
+          w-84 pb-10 pt-6 pl-6 pr-4 
           bg-black bg-opacity-70 
           shadow-[0px_0px_16px_rgba(255,255,255,0.25)] 
           border-r-2 border-solid border-r-[rgba(255,255,255,0.35)] 
@@ -106,7 +106,7 @@ const LeftSideBar = ({
         {player?.isHost ? (
           <button
             onClick={onGameStart}
-            className='w-52 h-14 bg-gradient-to-r from-black via-black to-black rounded-[5px] backdrop-blur-[12.20px] justify-center items-center inline-flex mb-6'
+            className='w-52 h-14 bg-linear-to-r from-black via-black to-black rounded-[5px] backdrop-blur-[12.20px] justify-center items-center inline-flex mb-6'
           >
             <div className='w-52 h-14 relative'>
               <div className='w-52 h-14 left-0 top-0 absolute opacity-90 bg-black/50 rounded-[5px] shadow-[inset_0px_0px_17px_4px_rgba(255,222,32,0.25)] border-2 border-[#ffc07e]/70' />
@@ -116,7 +116,7 @@ const LeftSideBar = ({
             </div>
           </button>
         ) : (
-          <div className='w-52 h-14 bg-gradient-to-r from-black via-black to-black rounded-[5px] backdrop-blur-[12.20px] justify-center items-center inline-flex mb-6'>
+          <div className='w-52 h-14 bg-linear-to-r from-black via-black to-black rounded-[5px] backdrop-blur-[12.20px] justify-center items-center inline-flex mb-6'>
             <div className='w-52 h-14 relative'>
               <div className='w-52 h-14 left-0 top-0 absolute opacity-90 bg-black/50 rounded-[5px] shadow-[inset_0px_0px_17px_4px_rgba(255,222,32,0.25)] border-2 border-[gray]/70' />
               <div className="w-52 h-14 left-0 top-0 absolute flex justify-center items-center text-white text-xl font-normal font-['Inder']">
@@ -127,23 +127,23 @@ const LeftSideBar = ({
         )}
 
         <div className='w-full'>
-          <div className='config-container w-[3rem] h-[9rem] bg-[#ff3939]/10 rounded-xl flex flex-col justify-between py-4'>
+          <div className='config-container w-12 h-36 bg-[#ff3939]/10 rounded-xl flex flex-col justify-between py-4'>
             {/* <button>
               <FontAwesomeIcon
                 icon={bell}
-                className="text-white p-1 w-[1.25rem] h-[1.25rem]"
+                className="text-white p-1 w-5 h-5"
               />
             </button> */}
             <button onClick={onSettingsClick}>
               <FontAwesomeIcon
                 icon={gear}
-                className='text-white p-1 w-[1.25rem] h-[1.25rem]'
+                className='text-white p-1 w-5 h-5'
               />
             </button>
             {/* <button onClick={copyCurrentURL}>
               <FontAwesomeIcon
                 icon={userGroup}
-                className="text-white p-1 w-[1.25rem] h-[1.25rem]"
+                className="text-white p-1 w-5 h-5"
               />
             </button> */}
             <button
@@ -154,13 +154,13 @@ const LeftSideBar = ({
             >
               <FontAwesomeIcon
                 icon={circleExclamation}
-                className='text-white p-1 w-[1.25rem] h-[1.25rem]'
+                className='text-white p-1 w-5 h-5'
               />
             </button>
             <button onClick={onLeaveRoom}>
               <FontAwesomeIcon
                 icon={doorOpen}
-                className='text-white p-1 w-[1.25rem] h-[1.25rem]'
+                className='text-white p-1 w-5 h-5'
               />
             </button>
           </div>

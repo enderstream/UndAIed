@@ -23,7 +23,7 @@ const GameMain = () => {
           className='w-full h-full  bg-cover bg-center bg-no-repeat fixed inset-0'
           style={{ backgroundImage: `url(${bgImg})` }}
         >
-          <div className='absolute inset-0 bg-gradient-to-r from-black to-[#11223349] opacity-100' />
+          <div className='absolute inset-0 bg-linear-to-r from-black to-[#11223349] opacity-100' />
         </div>
 
         <div className=' w-full h-full flex flex-col  '>

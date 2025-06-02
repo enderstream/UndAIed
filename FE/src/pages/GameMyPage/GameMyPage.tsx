@@ -20,7 +20,7 @@ const GameMyPage = () => {
         className='absolute inset-0 bg-cover bg-center bg-no-repeat min-h-[900px]'
         style={{ backgroundImage: `url(${gameMyPageBackground})` }}
       />
-      <div className='absolute bg-[#00000063] min-h-[900px] inset-0 bg-gradient-to-r from-black via-transparent to-black z-0' />
+      <div className='absolute bg-[#00000063] min-h-[900px] inset-0 bg-linear-to-r from-black via-transparent to-black z-0' />
       <AudioPlayer src={slideSound} isPlaying={true} shouldLoop={false} />
       <AudioPlayer src={myPageBgm} isPlaying={true} shouldLoop={true} />
 

@@ -126,7 +126,7 @@ const LogoutContainer = () => {
         </div>
         <GoogleLoginButton2 onTokenReceive={handleTokenReceive} />
         {/* <GoogleLoginButton onTokenReceive={handleTokenReceive} /> */}
-        {/* <button className="w-[22.5rem] h-9 border border-[#dadce0] bg-white rounded-[20px] flex items-center justify-between px-3 mt-5">
+        {/* <button className="w-90 h-9 border border-[#dadce0] bg-white rounded-[20px] flex items-center justify-between px-3 mt-5">
         <div></div>
         <div className="text-[#3c4043] text-sm font-medium font-['Roboto']">
           가입하기

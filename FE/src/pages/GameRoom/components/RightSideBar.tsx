@@ -35,7 +35,7 @@ const RightSideBar = ({ players, messages }: RightSideBarProps) => {
   return (
     <>
       <div
-        className={`fixed translate-y-full z-20 right-[max(0px,calc(50%-45rem))] w-[33.5rem] py-6 px-3 h-screen bg-black bg-opacity-40
+        className={`fixed translate-y-full z-20 right-[max(0px,calc(50%-45rem))] w-134 py-6 px-3 h-screen bg-black bg-opacity-40
                   border-solid border-l-2 border-l-[rgba(255,255,255,0.35)]
                   shadow-[0px_0px_16px_rgba(255,255,255,0.25)]
                   transition-transform duration-300 ease-in-out
@@ -140,7 +140,7 @@ const RightSideBar = ({ players, messages }: RightSideBarProps) => {
                   )
                 }
               })}
-              <div ref={scrollRef} className='h-[0.5rem] w-full' />
+              <div ref={scrollRef} className='h-2 w-full' />
             </div>
           </div>
         </div>
@@ -152,7 +152,7 @@ const RightSideBar = ({ players, messages }: RightSideBarProps) => {
       >
         <FontAwesomeIcon
           icon={peopleGroup}
-          className='text-white w-[1.25rem] h-[1.25rem]'
+          className='text-white w-5 h-5'
         />
       </button>
     </>

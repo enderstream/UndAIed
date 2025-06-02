@@ -81,7 +81,7 @@ const GameMainChat = () => {
     <div className={`flex flex-col p-4 bg-[#0000008f] h-52   ${blockStyle} `}>
       <div
         ref={chatContainerRef}
-        className='custom-scrollbar mb-3 flex-1 min-h-[8rem] max-h-[12rem] overflow-y-auto'
+        className='custom-scrollbar mb-3 flex-1 min-h-32 max-h-48 overflow-y-auto'
       >
         {chatList.map((msg, index) => (
           <div key={index} className='mb-1'>

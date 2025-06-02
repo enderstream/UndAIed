@@ -113,8 +113,8 @@ const Character = () => {
   return (
     <>
       <div className='flex justify-center'>
-        <div className='z-10 w-[40rem] items-center flex-col  hidden md:flex '>
-          <div className='w-[40rem]'>
+        <div className='z-10 w-160 items-center flex-col  hidden md:flex '>
+          <div className='w-160'>
             {' '}
             <img
               className='mb-6'

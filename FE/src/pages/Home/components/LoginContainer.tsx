@@ -169,7 +169,7 @@ const LoginContainer = ({ userInfo }: ILoginContainer) => {
             GAME START
           </button>
         </div>
-        <div className='w-[22.5rem] h-[10rem] flex justify-center items-center bg-black text-white border-2 border-[#822424] rounded-sm'>
+        <div className='w-90 h-40 flex justify-center items-center bg-black text-white border-2 border-[#822424] rounded-sm'>
           <div className='w-24 h-24 flex justify-center items-center mr-5'>
             <img
               className='w-28 h-28'
@@ -181,7 +181,7 @@ const LoginContainer = ({ userInfo }: ILoginContainer) => {
             <div className='flex items-center justify-between text-lg pb-0.5'>
               <div className='font-semibold'>{userInfo.nickname}님</div>
               <button
-                className='text-[11px] h-6 ml-3 border-[1px] rounded-sm px-2 hover:bg-[#4e4e4e60] transition-colors flex items-center justify-center'
+                className='text-[11px] h-6 ml-3 border rounded-sm px-2 hover:bg-[#4e4e4e60] transition-colors flex items-center justify-center'
                 onClick={handleLogout}
               >
                 로그아웃

@@ -61,13 +61,13 @@ ILeftGameSideBarProps) => {
       >
         {isOpen ? (
           <FontAwesomeIcon
-            className='text-white p-1 w-[1rem] h-[1rem]'
+            className='text-white p-1 w-4 h-4'
             icon={leftChervon}
           />
         ) : (
           <FontAwesomeIcon
             icon={menu}
-            className='text-white p-1 w-[1rem] h-[1rem]'
+            className='text-white p-1 w-4 h-4'
           />
         )}
       </button>
@@ -75,7 +75,7 @@ ILeftGameSideBarProps) => {
         className={`
           fixed -translate-x-full lg:translate-x-0 z-20 inset-0 
           left-[max(0px,calc(50%-45rem))] right-auto
-          w-[21rem] pb-10 pt-6 pl-6 pr-4 
+          w-84 pb-10 pt-6 pl-6 pr-4 
           bg-black bg-opacity-70 
           shadow-[0px_0px_16px_rgba(255,255,255,0.25)] 
           border-r-2 border-solid border-r-[rgba(255,255,255,0.35)] 
@@ -88,7 +88,7 @@ ILeftGameSideBarProps) => {
           <div className='text-sm'>{title}</div>
           <h1 className='text-base font-medium'>{round}라운드</h1>
           <div className='flex items-center text-lg '>
-            <h2 className='mr-3 text-xl font-semibold mb-[0.375rem]'>
+            <h2 className='mr-3 text-xl font-semibold mb-1.5'>
               {stage ? STAGE_INFO[stage][0] : 'Disconnected'}
             </h2>
             <SecondCounter
@@ -109,23 +109,23 @@ ILeftGameSideBarProps) => {
         </div>
 
         <div className='w-full'>
-          <div className='config-container w-[3rem] h-[9rem] bg-[#ff3939]/10 rounded-xl flex flex-col justify-between py-4'>
+          <div className='config-container w-12 h-36 bg-[#ff3939]/10 rounded-xl flex flex-col justify-between py-4'>
             {/* <button>
                       <FontAwesomeIcon
                         icon={bell}
-                        className="text-white p-1 w-[1.25rem] h-[1.25rem]"
+                        className="text-white p-1 w-5 h-5"
                       />
                     </button> */}
             <button onClick={onSettingsClick}>
               <FontAwesomeIcon
                 icon={gear}
-                className='text-white p-1 w-[1.25rem] h-[1.25rem]'
+                className='text-white p-1 w-5 h-5'
               />
             </button>
             {/* <button onClick={copyCurrentURL}>
                       <FontAwesomeIcon
                         icon={userGroup}
-                        className="text-white p-1 w-[1.25rem] h-[1.25rem]"
+                        className="text-white p-1 w-5 h-5"
                       />
                     </button> */}
             <button
@@ -136,7 +136,7 @@ ILeftGameSideBarProps) => {
             >
               <FontAwesomeIcon
                 icon={circleExclamation}
-                className='text-white p-1 w-[1.25rem] h-[1.25rem]'
+                className='text-white p-1 w-5 h-5'
               />
             </button>
             <button
@@ -146,7 +146,7 @@ ILeftGameSideBarProps) => {
             >
               <FontAwesomeIcon
                 icon={doorOpen}
-                className='text-white p-1 w-[1.25rem] h-[1.25rem]'
+                className='text-white p-1 w-5 h-5'
               />
             </button>
           </div>

@@ -135,9 +135,9 @@ const Home = () => {
       {/* 메인 튜토리얼 소개 컴포넌트 */}
       <div className='flex'>
         <div className='on-scroll flex w-screen min-h-[calc(100vh-3.5rem)]'>
-          <div className='w-[1px] h-[300vh] primary-bg-black' />
-          <div className='grow flex flex-col sticky top-[3.5rem] overflow-hidden h-[calc(100vh-3.5rem)] primary-bg-black'>
-            <div className='flex flex-col flex-grow h-full w-full max-w-screen-md self-start pt-8 pb-4 px-14'>
+          <div className='w-px h-[300vh] primary-bg-black' />
+          <div className='grow flex flex-col sticky top-14 overflow-hidden h-[calc(100vh-3.5rem)] primary-bg-black'>
+            <div className='flex flex-col grow h-full w-full max-w-(--breakpoint-md) self-start pt-8 pb-4 px-14'>
               <span className='text-gray-100 mb-10 text-4xl font-extrabold leading-none tracking-tight'>
                 실시간 채팅 기반 AI 추론 게임
               </span>
@@ -179,7 +179,7 @@ const Home = () => {
               </div>
               {/* <div className="flex justify-center">
               <button
-                className="group w-[4.5rem] h-[4.5rem] flex flex-col justify-center items-center text-white transition-all mt-2"
+                className="group w-18 h-18 flex flex-col justify-center items-center text-white transition-all mt-2"
                 onClick={onChervonClick}
               >
                 <FontAwesomeIcon
@@ -195,7 +195,7 @@ const Home = () => {
           </div>
         </div>
         {/* 우측 사이드바 컴포넌트 */}
-        <div className='fixed right-0 z-50 w-[600px] min-h-[calc(100vh-3.5rem)] bg-gradient-to-l from-black via-black to-transparent flex flex-col justify-center items-end pr-8'>
+        <div className='fixed right-0 z-50 w-[600px] min-h-[calc(100vh-3.5rem)] bg-linear-to-l from-black via-black to-transparent flex flex-col justify-center items-end pr-8'>
           {userInfo.isLogin ? (
             <LoginContainer userInfo={userInfo} />
           ) : (
@@ -207,12 +207,12 @@ const Home = () => {
       {/* 아래 공지사항 목록 컴포넌트 */}
       {/* <div className="flex justify-center bg-[#f7f7f7]">
         <div className="relative white-container min-h-[calc(70vh-3.5rem)] py-10 flex md:pl-[calc(32rem+2rem)] lg:pl-[calc(42rem+2rem)]">
-          <div className="md:flex hidden w-[32rem] lg:w-[42rem] left-[max(0px,calc(50%-45rem))] absolute mr-[2rem]">
+          <div className="md:flex hidden w-lg lg:w-2xl left-[max(0px,calc(50%-45rem))] absolute mr-8">
             <div className="w-1/2 pr-6">
               <Link to={"/board"} className="text-lg font-bold text-[#872341]">
                 공지사항{" "}
                 <FontAwesomeIcon
-                  className="w-[1rem] h-[1rem]"
+                  className="w-4 h-4"
                   icon={rightChervon}
                 />
               </Link>
@@ -235,7 +235,7 @@ const Home = () => {
               <Link to={"/board"} className="text-lg font-bold text-[#872341]">
                 버그 제보{" "}
                 <FontAwesomeIcon
-                  className="w-[1rem] h-[1rem]"
+                  className="w-4 h-4"
                   icon={rightChervon}
                 />
               </Link>
@@ -261,32 +261,32 @@ const Home = () => {
           © SSAFY Korea Corp. & Daejeon 2nd Class B212
         </span>
 
-        <nav className='border-[#555555] border-t-2 w-[48rem]'>
+        <nav className='border-[#555555] border-t-2 w-3xl'>
           <ul className='flex space-x-6 text-gray-300 text-sm h-8 justify-center items-center'>
             <Link to={'/'} className='hover:text-white cursor-pointer'>
               계정정보
             </Link>
-            <div className='h-4 w-[0.125rem] bg-[#555555]' />
+            <div className='h-4 w-0.5 bg-[#555555]' />
             <Link to={'/'} className='hover:text-white cursor-pointer'>
               계정활동
             </Link>
-            <div className='h-4 w-[0.125rem] bg-[#555555]' />
+            <div className='h-4 w-0.5 bg-[#555555]' />
             <Link
               to={'/policy'}
               className='hover:text-white cursor-pointer font-bold'
             >
               개인정보처리방침
             </Link>
-            <div className='h-4 w-[0.125rem] bg-[#555555]' />
+            <div className='h-4 w-0.5 bg-[#555555]' />
             <Link to={'/policy'} className='hover:text-white cursor-pointer'>
               이용약관
             </Link>
-            <div className='h-4 w-[0.125rem] bg-[#555555]' />
+            <div className='h-4 w-0.5 bg-[#555555]' />
 
             <Link to={'/policy'} className='hover:text-white cursor-pointer'>
               운영정책
             </Link>
-            <div className='h-4 w-[0.125rem] bg-[#555555]' />
+            <div className='h-4 w-0.5 bg-[#555555]' />
             <Link to={'/'} className='hover:text-white cursor-pointer'>
               회사소개
             </Link>

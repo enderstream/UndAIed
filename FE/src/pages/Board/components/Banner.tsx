@@ -16,7 +16,7 @@ const Banner = ({ category, bannerImage }: BannerProps): JSX.Element => {
         backgroundPosition: '50% 60%',
       }}
     >
-      <div className='absolute inset-0 bg-gradient-to-r from-black via-transparent to-black'>
+      <div className='absolute inset-0 bg-linear-to-r from-black via-transparent to-black'>
         <div className='relative ml-[17%] z-10 h-full flex flex-col justify-center items-left text-white'>
           <div className='text-5xl'>{CATEGORY_NAME[category]}</div>
         </div>

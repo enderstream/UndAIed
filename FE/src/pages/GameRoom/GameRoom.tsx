@@ -313,7 +313,7 @@ const GameRoom = () => {
       <AudioPlayer src={gameRoomBgm} isPlaying={true} shouldLoop={true} />
 
       <div className='bg-[#07070a]'>
-        <div className='background-gradient max-w-[90rem] mx-auto px-4 sm:px-4 md:px-6'>
+        <div className='background-gradient max-w-360 mx-auto px-4 sm:px-4 md:px-6'>
           <LeftSideBar
             roomId={roomInfo?.roomId}
             roomTitle={roomInfo?.roomTitle}
@@ -325,8 +325,8 @@ const GameRoom = () => {
             player={playerInfo}
             onSettingsClick={() => setIsSettingsOpen(true)}
           />
-          <div className='lg:pl-[19.5rem]'>
-            <div className='max-w-3xl mx-auto xl:max-w-none xl:ml-0 xl:mr-[32rem]'>
+          <div className='lg:pl-78'>
+            <div className='max-w-3xl mx-auto xl:max-w-none xl:ml-0 xl:mr-128'>
               <div className='chat-container flex flex-col h-screen overflow-auto'>
                 {/* 메시지 리스트 영역 */}
                 <div className='flex-1 px-5 pt-4'>
@@ -354,7 +354,7 @@ const GameRoom = () => {
                   })}
                   <div
                     ref={scrollRef}
-                    className='chat-input-temp h-[4.5rem] w-full'
+                    className='chat-input-temp h-18 w-full'
                   />
                   <div
                     className='chat-input fixed z-10 h-10 bottom-4'

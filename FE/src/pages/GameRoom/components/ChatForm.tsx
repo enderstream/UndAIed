@@ -78,7 +78,7 @@ const ChatForm = ({ onSendChat }: IFormProps) => {
         type='text'
         autoComplete='off'
       />
-      <div className='bg-[#848484] w-[1px] h-6' />
+      <div className='bg-[#848484] w-px h-6' />
       <button className='w-6 h-6 ml-2'>
         <FontAwesomeIcon icon={paperPlane} className='text-[#848484]' />
       </button>
