@@ -291,7 +291,7 @@ function GameRoom() {
   useEffect(() => {
     // (3) ResizeObserver를 통한 너비 측정
     const ro = new ResizeObserver((entries) => {
-      for (let entry of entries) {
+      for (const entry of entries) {
         // contentRect.width가 실제 요소의 넓이
         setChatInputWidth(entry.contentRect.width);
       }
