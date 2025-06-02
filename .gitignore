@@ -1,4 +1,4 @@
-# Python
+# Python (AI 디렉토리용)
 __pycache__/
 *.py[cod]
 *$py.class
@@ -16,7 +16,6 @@ parts/
 sdist/
 var/
 wheels/
-share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -25,32 +24,20 @@ MANIFEST
 .coverage
 .coverage.*
 .tox/
-.nox/
 .cache
 htmlcov/
-cover/
 .hypothesis/
 .ruff_cache/
 .mypy_cache/
 .dmypy.json
-dmypy.json
-.pyre/
-.pytype/
-cython_debug/
-.pdm.toml
-.pdm-python
-.pdm-build/
-__pypackages__/
+dmyp.json
 
-# Node.js and Package Managers
+# Node.js (FE 디렉토리용)
 node_modules/
-jspm_packages/
-bower_components/
-web_modules/
 .npm
 .yarn/
 .yarn-integrity
-.pnp.*
+.pnpm-debug.log*
 
 # Logs
 logs/
@@ -60,9 +47,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-.pnpm-debug.log*
-pip-log.txt
-pip-delete-this-directory.txt
 
 # Build and Distribution
 dist/
@@ -71,9 +55,6 @@ build/
 target/
 out/
 *.local
-/nbbuild/
-/nbdist/
-/.nb-gradle/
 
 # Virtual Environments
 .env
@@ -96,21 +77,11 @@ venv.bak/
 .settings/
 .springBeans
 .sts4-cache
-.spyderproject
-.spyproject
-.ropeproject
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
 *.sw?
 
-# Java
+# Java (BE 디렉토리용)
 *.class
 *.jar
-*.war
-*.nar
-*.ear
 *.zip
 *.tar.gz
 *.rar
@@ -124,16 +95,7 @@ replay_pid*
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-# Documentation
-HELP.md
-/site
-docs/_build/
-
 # Database
-db.sqlite3
-db.sqlite3-journal
-mysql_data/
-mysql/data/
 !mysql/init/
 !mysql/init/*.sql
 
@@ -153,20 +115,10 @@ Icon
 .TemporaryItems
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
 
 # Configuration
-/BE/undaid/src/main/resources/
 /BE/undaid/src/main/resources/application-secrets.properties
 /BE/undaid/src/main/resources/application.properties
-.pypirc
-nginx/conf.d
-nginx/nginx.conf
-!nginx/conf.d/.gitkeep
 
 # SSL Certificates
 *.pem
@@ -176,29 +128,9 @@ nginx/nginx.conf
 ssl/
 certificates/
 
-# Framework specific
-.next
-.nuxt
-out
-.docusaurus
-.serverless/
-.fusebox/
-.parcel-cache
-.temp
-**/.vitepress/dist
-**/.vitepress/cache
-
-# Project specific
-jenkins*
-tree_project_*
-
-# Redis
-!redis/var/
-redis/var/run/redis/redis-server.pid
-
 # Docker
 docker-compose.override.yml
 
-# mysql
-mysql/pid/*
-mysql/pid
+# Nginx
+nginx/conf.d
+nginx/nginx.conf
