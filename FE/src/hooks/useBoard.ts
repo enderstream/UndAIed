@@ -57,8 +57,7 @@ export const useUpdatePost = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: ({ id }: UpdatePostParams) =>
-      boardApi.updatePost(id),
+    mutationFn: ({ id }: UpdatePostParams) => boardApi.updatePost(id),
 
     onSuccess: (_, { id }) => {
       // 수정 성공 시 해당 게시글의 캐시를 무효화

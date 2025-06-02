@@ -81,14 +81,14 @@ function Home() {
       setScrollRatio(
         window.scrollY === 0
           ? 0
-          : (window.scrollY / totalScrollableHeight) * 100
+          : (window.scrollY / totalScrollableHeight) * 100,
       );
       setInfoScrollRatio(
         window.scrollY === 0
           ? 0
           : window.scrollY / infoHeigt > 1
-          ? 100
-          : (window.scrollY / infoHeigt) * 100
+            ? 100
+            : (window.scrollY / infoHeigt) * 100,
       );
     };
     // clean up code

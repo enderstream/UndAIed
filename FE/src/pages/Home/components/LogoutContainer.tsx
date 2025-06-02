@@ -15,7 +15,7 @@ function LogoutContainer() {
       // 서버로 토큰 전송
       const response = await axios.post(
         import.meta.env.VITE_API_URL + "/api/v1/user",
-        { token }
+        { token },
       );
       // 서버 응답 확인
 

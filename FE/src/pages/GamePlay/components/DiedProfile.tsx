@@ -38,7 +38,7 @@ function DiedProfile({ nickname, icon, playerNum }: IDiedProfileProps) {
         return newState;
       });
     },
-    [setUserMemos]
+    [setUserMemos],
   );
 
   return (

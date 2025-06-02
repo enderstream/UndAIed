@@ -94,10 +94,10 @@ function ChatForm({
           isDead
             ? "죽은 자는 말이 없다."
             : isVote
-            ? "우측 초상화에서 투표하기."
-            : isSubjectDebate || isFreeDebate
-            ? "채팅 입력하기"
-            : "토론 시간에 채팅을 작성할 수 있습니다"
+              ? "우측 초상화에서 투표하기."
+              : isSubjectDebate || isFreeDebate
+                ? "채팅 입력하기"
+                : "토론 시간에 채팅을 작성할 수 있습니다"
         }
         disabled={isDead || !(isSubjectDebate || isFreeDebate)}
         type="text"

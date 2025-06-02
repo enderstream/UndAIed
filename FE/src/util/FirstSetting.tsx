@@ -25,8 +25,6 @@
 
 // export default FirstSetting;
 
-
-
 import { useState } from "react";
 import AudioPlayer from "./AudioPlayer";
 import Setting from "./Setting";

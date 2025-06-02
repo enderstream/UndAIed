@@ -168,7 +168,7 @@ const GamePlayDetail = ({
           <div className="p-4 space-y-8">
             {gameRecords
               .filter(
-                (record: GameRecord) => record.roundNumber === activeRound
+                (record: GameRecord) => record.roundNumber === activeRound,
               )
               .map((record: GameRecord) => (
                 <div key={record.gameRecordId} className="space-y-6">

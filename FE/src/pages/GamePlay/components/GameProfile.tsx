@@ -56,7 +56,7 @@ function GameProfile({
         return newState;
       });
     },
-    [setUserMemos]
+    [setUserMemos],
   );
 
   return (
@@ -103,7 +103,7 @@ function GameProfile({
           />
         </button>
         {stage === "vote" ? (
-        // {stage === "vote" && isUserDead === false ? (
+          // {stage === "vote" && isUserDead === false ? (
           <button
             onClick={() => {
               onVoteSubmit(playerNum);

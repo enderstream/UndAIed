@@ -66,7 +66,7 @@ function LoginContainer({ userInfo }: ILoginContainer) {
           userEmail: userId,
           agreed: true,
           timestamp: new Date().toISOString(),
-        })
+        }),
       );
     }
 
@@ -87,7 +87,7 @@ function LoginContainer({ userInfo }: ILoginContainer) {
           userEmail: userId,
           agreed: false,
           timestamp: new Date().toISOString(),
-        })
+        }),
       );
     }
 

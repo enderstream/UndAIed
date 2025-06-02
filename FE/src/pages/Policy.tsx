@@ -17,7 +17,7 @@ const Policy: React.FC<ConsentProps> = ({ onAccept, onDecline }) => {
     } else {
       if (
         window.confirm(
-          "데이터 수집에 동의하지 않으시면 게임 플레이가 제한될 수 있습니다. 계속하시겠습니까?"
+          "데이터 수집에 동의하지 않으시면 게임 플레이가 제한될 수 있습니다. 계속하시겠습니까?",
         )
       ) {
         onDecline();

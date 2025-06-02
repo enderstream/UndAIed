@@ -152,7 +152,7 @@ function LeftSideBar({
                 window.open(
                   "/board/bugreport",
                   "_blank",
-                  "noopener,noreferrer"
+                  "noopener,noreferrer",
                 );
               }}
             >

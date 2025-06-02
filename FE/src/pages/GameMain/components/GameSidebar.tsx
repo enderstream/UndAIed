@@ -22,7 +22,8 @@ function GameSidebar() {
   const winningRate = userData
     ? userData.totalWin + userData.totalLose > 0
       ? Math.round(
-          (userData.totalWin / (userData.totalLose + userData.totalWin)) * 10000
+          (userData.totalWin / (userData.totalLose + userData.totalWin)) *
+            10000,
         ) / 100
       : 0
     : 0;

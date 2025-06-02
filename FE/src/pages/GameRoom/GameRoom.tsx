@@ -84,7 +84,7 @@ function GameRoom() {
       debugger;
       if (data.currentPlayers) {
         const newUsers: IPlayer[] = data.currentPlayers.sort(
-          (a: IPlayer, b: IPlayer) => a.enterId - b.enterId
+          (a: IPlayer, b: IPlayer) => a.enterId - b.enterId,
         );
         const data_ = data;
         data_.currentPlayers = newUsers;
@@ -98,7 +98,7 @@ function GameRoom() {
       debugger;
       if (data.currentPlayers) {
         const newUsers: IPlayer[] = data.currentPlayers.sort(
-          (a: IPlayer, b: IPlayer) => a.enterId - b.enterId
+          (a: IPlayer, b: IPlayer) => a.enterId - b.enterId,
         );
         const data_ = data;
         data_.currentPlayers = newUsers;
@@ -120,7 +120,7 @@ function GameRoom() {
           setMessages((prevMessages) => [...prevMessages, newMessage]);
         } else {
           const player = roomInfo.currentPlayers.find(
-            (player) => player.nickname === data.nickname
+            (player) => player.nickname === data.nickname,
           );
 
           if (player) {
@@ -153,8 +153,8 @@ function GameRoom() {
   useEffect(() => {
     setPlayerInfo(
       roomInfo?.currentPlayers.find(
-        (player) => player.enterId === playerEnterId
-      )
+        (player) => player.enterId === playerEnterId,
+      ),
     );
   }, [roomInfo, playerEnterId]);
 
@@ -183,7 +183,7 @@ function GameRoom() {
           toast.error(errorMessage);
           return;
         }
-      }
+      },
     );
   }, [socket]);
 
@@ -204,7 +204,7 @@ function GameRoom() {
           console.error("방 퇴장 중 오류:", errorMessage);
           toast.error(errorMessage);
         }
-      }
+      },
     );
   }, [socket]);
 
@@ -227,10 +227,10 @@ function GameRoom() {
             console.error("채팅 전송 오류:", errorMessage);
             toast.error(errorMessage);
           }
-        }
+        },
       );
     },
-    [socket]
+    [socket],
   );
 
   const handleGameStart = useCallback(() => {
@@ -250,7 +250,7 @@ function GameRoom() {
           //게임 시작 실패 안내내
           toast.error(errorMessage);
         }
-      }
+      },
     );
   }, [socket]);
 
@@ -342,12 +342,12 @@ function GameRoom() {
                           message={msg}
                           playerName={
                             roomInfo?.currentPlayers.find(
-                              (user) => user.enterId === msg.player
+                              (user) => user.enterId === msg.player,
                             )?.nickname
                           }
                           icon={
                             roomInfo?.currentPlayers.find(
-                              (user) => user.enterId === msg.player
+                              (user) => user.enterId === msg.player,
                             )?.profileImage
                           }
                         />

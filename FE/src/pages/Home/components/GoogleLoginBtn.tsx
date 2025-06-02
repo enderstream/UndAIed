@@ -10,7 +10,7 @@ const GoogleLoginButton: React.FC<GoogleLoginButtonProps> = ({
 }) => {
   // 구글에서 로그인이 완료되었을 때 ID 토큰을 받아오는 콜백
   const handleCallbackResponse = (
-    response: google.accounts.id.CredentialResponse
+    response: google.accounts.id.CredentialResponse,
   ) => {
     const token = response.credential;
     onTokenReceive(token);
@@ -26,21 +26,22 @@ const GoogleLoginButton: React.FC<GoogleLoginButtonProps> = ({
   // }, []);
 
   useEffect(() => {
-  // 디버깅 정보 추가
-  // console.log('Current URL:', window.location.href);
-  // console.log('Client ID:', process.env.REACT_APP_GOOGLE_CLIENT_ID);
-  
-  if (!(window as any).google) {
-    console.error('Google script not loaded');
-    return;
-  }
+    // 디버깅 정보 추가
+    // console.log('Current URL:', window.location.href);
+    // console.log('Client ID:', process.env.REACT_APP_GOOGLE_CLIENT_ID);
 
-  (window as any).google.accounts.id.initialize({
-    client_id: "704642215458-2og18pmpedr8rc1n1rc2443b86mspdgt.apps.googleusercontent.com",
-    callback: handleCallbackResponse,
-    auto_select: false,
-  });
-}, []);
+    if (!(window as any).google) {
+      console.error("Google script not loaded");
+      return;
+    }
+
+    (window as any).google.accounts.id.initialize({
+      client_id:
+        "704642215458-2og18pmpedr8rc1n1rc2443b86mspdgt.apps.googleusercontent.com",
+      callback: handleCallbackResponse,
+      auto_select: false,
+    });
+  }, []);
 
   // 버튼 클릭 시 로그인 과정을 트리거
   const handleLoginClick = () => {

@@ -9,7 +9,7 @@ const GoogleLoginButton2: React.FC<GoogleLoginButtonProps> = ({
 }) => {
   // Google 로그인 성공 시 호출되는 콜백
   const handleCallbackResponse = (
-    response: google.accounts.id.CredentialResponse
+    response: google.accounts.id.CredentialResponse,
   ) => {
     // 구글에서 발급해준 JWT
     const token = response.credential;
@@ -41,7 +41,7 @@ const GoogleLoginButton2: React.FC<GoogleLoginButtonProps> = ({
           shape: "pill", // or 'rectangular', 'circle'
           text: "continue_with", // 'signin_with', 'signup_with'
           width: "360px",
-        }
+        },
       );
     }
   }, []);

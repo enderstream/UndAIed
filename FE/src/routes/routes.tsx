@@ -97,7 +97,6 @@
 
 // export default router;
 
-
 // src/routes/routes.tsx
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
@@ -129,12 +128,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/policy",
-        element: (
-          <Policy
-            onAccept={() => {}}
-            onDecline={() => {}}
-          />
-        ),
+        element: <Policy onAccept={() => {}} onDecline={() => {}} />,
       },
       {
         path: "/signup",

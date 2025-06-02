@@ -21,7 +21,7 @@ function Signup() {
   } = useForm<IProfile>();
 
   const onValidSubmit: SubmitHandler<IProfile> = async () => {
-  // const onValidSubmit: SubmitHandler<IProfile> = async (data) => {
+    // const onValidSubmit: SubmitHandler<IProfile> = async (data) => {
     try {
       //바꾸지 않은 값은 null이 되어야 한다.
       // const response = await axios.patch("api/v1/user/profile", {

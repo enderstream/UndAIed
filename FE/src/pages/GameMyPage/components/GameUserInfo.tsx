@@ -22,7 +22,8 @@ export function GameUserInfo() {
   const winningRate = userInfo
     ? userInfo.totalWin + userInfo.totalLose > 0
       ? Math.round(
-          (userInfo.totalWin / (userInfo.totalLose + userInfo.totalWin)) * 10000
+          (userInfo.totalWin / (userInfo.totalLose + userInfo.totalWin)) *
+            10000,
         ) / 100
       : 0
     : 0;

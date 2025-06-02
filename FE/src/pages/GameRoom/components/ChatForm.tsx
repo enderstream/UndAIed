@@ -16,7 +16,7 @@ interface IForm {
 }
 
 function ChatForm({ onSendChat }: IFormProps) {
-// function ChatForm({ playerNum, socket, onSendChat }: IFormProps) {
+  // function ChatForm({ playerNum, socket, onSendChat }: IFormProps) {
   const paperPlane: IconDefinition = faPaperPlane;
   const {
     register,

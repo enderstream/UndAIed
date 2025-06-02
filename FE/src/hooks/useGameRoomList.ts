@@ -99,20 +99,20 @@ export const useGameRooms = () => {
     const handleRoomUpdated = (updatedRoom: GameRoom) => {
       if (updatedRoom.playing === true) {
         setRooms((prev: GameRoom[]) =>
-          prev.filter((room) => room.roomId !== updatedRoom.roomId)
+          prev.filter((room) => room.roomId !== updatedRoom.roomId),
         );
       } else {
         setRooms((prev: GameRoom[]) =>
           prev.map((room) =>
-            room.roomId === updatedRoom.roomId ? updatedRoom : room
-          )
+            room.roomId === updatedRoom.roomId ? updatedRoom : room,
+          ),
         );
       }
     };
     // 방 삭제 이벤트 처리
     const handleRoomDeleted = (roomId: number) => {
       setRooms((prev: GameRoom[]) =>
-        prev.filter((room) => room.roomId !== roomId)
+        prev.filter((room) => room.roomId !== roomId),
       );
     };
 

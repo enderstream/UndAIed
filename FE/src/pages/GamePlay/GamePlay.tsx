@@ -182,7 +182,7 @@ function GamePlay() {
           setMessages((prevMessages) => [...prevMessages, newMessage]);
         } else if (gameInfo) {
           const player = gameInfo.players.find(
-            (player) => player.number === data.number
+            (player) => player.number === data.number,
           );
           if (player) {
             const newMessage: IMessage = {
@@ -239,7 +239,7 @@ function GamePlay() {
           toast.error(data.errorMessage);
           return;
         }
-      }
+      },
     );
   }, [socket, playerEnterId]);
 
@@ -254,7 +254,7 @@ function GamePlay() {
   useEffect(() => {
     debugger;
     setPlayerInfo(
-      gameInfo?.players.find((player) => player.number === playerEnterId)
+      gameInfo?.players.find((player) => player.number === playerEnterId),
     );
   }, [gameInfo, playerEnterId]);
 
@@ -282,10 +282,10 @@ function GamePlay() {
             console.error("채팅 전송 오류:", errorMessage);
             toast.error(errorMessage);
           }
-        }
+        },
       );
     },
-    [socket, playerEnterId]
+    [socket, playerEnterId],
   );
 
   const handleVoteSubmit = useCallback(
@@ -307,10 +307,10 @@ function GamePlay() {
             console.error("채팅 전송 오류:", errorMessage);
             toast.error(errorMessage);
           }
-        }
+        },
       );
     },
-    [socket]
+    [socket],
   );
 
   const scrollToBottom = () => {
