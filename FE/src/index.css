@@ -9,16 +9,26 @@
   --primary-black: rgb(7, 7, 10);
 }
 
+
+/* 크롬, 사파리, 오페라 등 웹킷 엔진 */
 html::-webkit-scrollbar {
-  display: none; /* 크롬, 사파리, 오페라 등 웹킷 엔진 */
-}
+  display: none; 
+}   
+
 input {
   outline: none;
 }
-.chat-container {
-  @apply [&::-webkit-scrollbar]:w-1
-  [&::-webkit-scrollbar-track]:bg-[#4c4e4f]
-  [&::-webkit-scrollbar-thumb]:bg-[#c5c5c77a];
+
+.chat-container::-webkit-scrollbar {
+  width: 0.25rem; /* w-1과 동일 */
+}
+
+.chat-container::-webkit-scrollbar-track {
+  background-color: #4c4e4f;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  background-color: #c5c5c77a;
 }
 
 .background-gradient {
