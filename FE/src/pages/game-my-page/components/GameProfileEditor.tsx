@@ -19,9 +19,9 @@ export const GameProfileEditor = ({
   userInfo,
 }: GameProfileEditorProps) => {
   const blockStyle =
-    'bg-[#0000006c] border border-[#F74a5c]/40 backdrop-blur-[12.20px] text-[#fffbfb] rounded-[5px] transition-all duration-200'
+    'bg-[#0000006c] border border-[#F74A5C]/40 backdrop-blur-[12.20px] text-[#fffbfb] rounded-[5px] transition-all duration-200'
   const blockHover =
-    'hover:bg-[#f8376467] hover:border-[#f93c4f] hover:shadow-[0_0_15px_0] hover:shadow-[#F74a5c]'
+    'hover:bg-[#f8376467] hover:border-[#f93c4f] hover:shadow-[0_0_15px_0] hover:shadow-[#F74A5C]'
   const blockActive =
     'active:bg-[#f837644e] active:border-[#f837644e] active:shadow-sm'
   const [nickname, setNickname] = useState(userInfo.nickname)
@@ -66,7 +66,7 @@ export const GameProfileEditor = ({
               type='text'
               value={nickname}
               onChange={handleNicknameChange}
-              className='w-full px-3 py-2 bg-[#2e2e2ef0] border border-[#F74a5c]/40 rounded text-white focus:outline-none focus:border-[#F74a5c]'
+              className='w-full px-3 py-2 bg-[#2e2e2ef0] border border-[#F74A5C]/40 rounded text-white focus:outline-none focus:border-[#F74A5C]'
               placeholder='닉네임을 입력하세요'
             />
           </div>
@@ -81,10 +81,10 @@ export const GameProfileEditor = ({
                   className={`
                     ${blockStyle}
                     ${selectedProfileImage === avatar.id
-                      ? 'border-[#F74a5c] shadow-[0_0_15px_0] shadow-[#F74a5c]'
+                      ? 'border-[#F74A5C] shadow-[0_0_15px_0] shadow-[#F74A5C]'
                       : ''
                     }
-                    p-2 cursor-pointer transition-all duration-200 hover:border-[#F74a5c]
+                    p-2 cursor-pointer transition-all duration-200 hover:border-[#F74A5C]
                   `}
                 >
                   <img

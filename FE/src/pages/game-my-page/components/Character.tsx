@@ -7,9 +7,9 @@ import { useState } from 'react'
 
 const Character = () => {
   const blockStyle =
-    'bg-[#0000006c] border border-[#F74a5c]/40 backdrop-blur-[12.20px] text-[#fffbfb] rounded-[5px] transition-all duration-200'
+    'bg-[#0000006c] border border-[#F74A5C]/40 backdrop-blur-[12.20px] text-[#fffbfb] rounded-[5px] transition-all duration-200'
   const blockHover =
-    'hover:bg-[#f8376467] hover:border-[#f93c4f] hover:shadow-[0_0_15px_0] hover:shadow-[#F74a5c]'
+    'hover:bg-[#f8376467] hover:border-[#f93c4f] hover:shadow-[0_0_15px_0] hover:shadow-[#F74A5C]'
   const blockActive =
     'active:bg-[#f837644e] active:border-[#f837644e] active:shadow-sm'
 
@@ -155,7 +155,7 @@ const Character = () => {
                   }}
                 >
                   <div
-                    className='w-full h-full   border-[#F74a5c]/40 backdrop-blur-sm 
+                    className='w-full h-full   border-[#F74A5C]/40 backdrop-blur-sm 
                                 rounded-lg overflow-hidden'
                   >
                     <img
@@ -175,7 +175,7 @@ const Character = () => {
                   {index === selectedIndex && (
                     <div
                       className='absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-16 h-1 
-                                  bg-[#F74a5c] rounded-full shadow-lg shadow-[#F74a5c]/50'
+                                  bg-[#F74A5C] rounded-full shadow-lg shadow-[#F74A5C]/50'
                     />
                   )}
                 </div>

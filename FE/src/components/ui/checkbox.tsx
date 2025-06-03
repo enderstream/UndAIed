@@ -13,7 +13,7 @@ const checkboxVariants = cva(
         default:
           "border-input dark:bg-input/30 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-primary data-[state=checked]:border-primary focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
         policy:
-          "border-[#F74a5c]/60 dark:bg-[#5349507a] data-[state=checked]:bg-[#F74a5c] data-[state=checked]:text-white dark:data-[state=checked]:bg-[#F74a5c] data-[state=checked]:border-[#F74a5c] focus-visible:border-[#F74a5c] focus-visible:ring-[#F74a5c]/20 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+          "border-[#F74A5C]/60 dark:bg-[#5349507a] data-[state=checked]:bg-[#F74A5C] data-[state=checked]:text-white dark:data-[state=checked]:bg-[#F74A5C] data-[state=checked]:border-[#F74A5C] focus-visible:border-[#F74A5C] focus-visible:ring-[#F74A5C]/20 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
       },
     },
     defaultVariants: {

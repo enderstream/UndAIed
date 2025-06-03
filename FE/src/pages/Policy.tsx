@@ -10,7 +10,7 @@ const Policy = () => {
 
   return (
     <div className='fixed inset-0 bg-black flex items-center justify-center z-50 p-4'>
-      <div className='bg-[#0000006c] border border-[#F74a5c] backdrop-blur-[12.20px] text-white rounded-lg p-6 max-w-2xl w-full max-h-[90vh] flex flex-col'>
+      <div className='bg-[#0000006c] border border-[#F74A5C] backdrop-blur-[12.20px] text-white rounded-lg p-6 max-w-2xl w-full max-h-[90vh] flex flex-col'>
         <h2 className='text-xl font-bold mb-4 flex-shrink-0'>연구 및 데이터 수집 동의서</h2>
 
         <div className='space-y-4 mb-6 border p-4 border-[#868585] overflow-y-auto max-h-[50vh] flex-1 rounded-sm'>

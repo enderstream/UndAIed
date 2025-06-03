@@ -47,7 +47,7 @@ const Signup = () => {
       <Header scrollRatio={0} />
       <HeaderTemp />
       <div className='flex justify-center items-center bg-[#f7f7f7] h-[calc(100vh-3.5rem)]'>
-        <div className='relative white-container py-10 flex flex-col items-center bg-[#121212] shadow-lg w-[90%] max-w-lg border border-[#F74a5c] rounded-sm text-white mb-8'>
+        <div className='relative white-container py-10 flex flex-col items-center bg-[#121212] shadow-lg w-[90%] max-w-lg border border-[#F74A5C] rounded-sm text-white mb-8'>
           <h1 className='text-2xl font-bold mb-8'>회원정보 수정</h1>
           <form
             onSubmit={handleSubmit(onValidSubmit, onInvalidSubmit)}
@@ -116,7 +116,7 @@ const Signup = () => {
                 {...register("sex", {
                   required: "성별을 입력해주세요.",
                 })}
-                className="w-full px-4 py-2 bg-[#2c2c3a] rounded-lg border border-[#443344] focus:ring-2 focus:ring-[#F74a5c] focus:outline-none"
+                className="w-full px-4 py-2 bg-[#2c2c3a] rounded-lg border border-[#443344] focus:ring-2 focus:ring-[#F74A5C] focus:outline-none"
                 placeholder="example@domain.com"
               />
               {errors.sex && (

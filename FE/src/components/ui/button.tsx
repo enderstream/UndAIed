@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         UndAIed:
-          "bg-[#5349507a] border border-[#f74a5c]/60 backdrop-blur-[12.20px] text-[#fffbfb] hover:bg-[#f8376467] hover:border-[#f93c4f] rounded-[5px] hover:shadow-[0_0_20px_#F74A5C] active:bg-[#f837644e] active:border-[#f837644e] active:shadow-sm focus-visible:ring-[#f74a5c]/20 disabled:bg-[#5349507a]/50 disabled:border-[#f74a5c]/30 disabled:text-[#fffbfb]/50 disabled:backdrop-blur-[6px]",
+          "bg-[#5349507a] border border-[#F74A5C]/60 backdrop-blur-[12.20px] text-[#fffbfb] hover:bg-[#f8376467] hover:border-[#f93c4f] rounded-[5px] hover:shadow-[0_0_20px_#F74A5C] active:bg-[#f837644e] active:border-[#f837644e] active:shadow-sm focus-visible:ring-[#F74A5C]/20 disabled:bg-[#5349507a]/50 disabled:border-[#F74A5C]/30 disabled:text-[#fffbfb]/50 disabled:backdrop-blur-[6px]",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
