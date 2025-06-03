@@ -153,10 +153,11 @@ const GamePlayDetail = ({
                 <button
                   key={record.roundNumber}
                   onClick={() => setActiveRound(record.roundNumber)}
-                  className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${activeRound === record.roundNumber
-                    ? 'bg-rose-500 text-white shadow-lg shadow-rose-500/30'
-                    : 'bg-black/40 text-gray-400 hover:bg-rose-500/20 hover:text-white'
-                    }`}
+                  className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                    activeRound === record.roundNumber
+                      ? 'bg-rose-500 text-white shadow-lg shadow-rose-500/30'
+                      : 'bg-black/40 text-gray-400 hover:bg-rose-500/20 hover:text-white'
+                  }`}
                 >
                   Round {record.roundNumber}
                 </button>

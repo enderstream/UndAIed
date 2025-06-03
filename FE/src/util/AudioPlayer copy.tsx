@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
+import { useRecoilValue } from 'recoil'
 import { preloadAudio } from './AudioCache'
-// Zustand store import
-import { useSettingsStore } from '@/store/settingsStore'
+import { settingsState } from '../store/settingState'
 
 interface AudioPlayerProps {
   src: string
@@ -14,8 +14,7 @@ const AudioPlayer = ({
   isPlaying,
   shouldLoop = true,
 }: AudioPlayerProps) => {
-  // Zustand로 전환
-  const { settings } = useSettingsStore()
+  const settings = useRecoilValue(settingsState)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
   // 컴포넌트 마운트시 즉시 오디오 초기화

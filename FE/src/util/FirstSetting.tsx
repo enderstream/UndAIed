@@ -27,7 +27,7 @@
 
 import { useState } from 'react'
 import AudioPlayer from './AudioPlayer'
-import Setting from './Setting'
+import Setting from './Settings'
 import firstBgm from '../assets/bgm/my-page.mp3'
 
 const FirstSetting = () => {

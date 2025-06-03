@@ -2,7 +2,11 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
 
 const Policy = () => {
   const [isChecked, setIsChecked] = useState(false)
@@ -11,12 +15,15 @@ const Policy = () => {
   return (
     <div className='fixed inset-0 bg-black flex items-center justify-center z-50 p-4'>
       <div className='bg-[#0000006c] border border-[#F74A5C] backdrop-blur-[12.20px] text-white rounded-lg p-6 max-w-2xl w-full max-h-[90vh] flex flex-col'>
-        <h2 className='text-xl font-bold mb-4 flex-shrink-0'>연구 및 데이터 수집 동의서</h2>
+        <h2 className='text-xl font-bold mb-4 flex-shrink-0'>
+          연구 및 데이터 수집 동의서
+        </h2>
 
         <div className='space-y-4 mb-6 border p-4 border-[#868585] overflow-y-auto max-h-[50vh] flex-1 rounded-sm'>
           <p className='text-lg font-semibold'>연구 목적</p>
           <p>
-            본 게임은 인공지능(AI)과 인간의 상호작용 패턴을 연구하고, AI의 자연스러운 대화 능력을 향상시키기 위한 데이터를 수집합니다.
+            본 게임은 인공지능(AI)과 인간의 상호작용 패턴을 연구하고, AI의
+            자연스러운 대화 능력을 향상시키기 위한 데이터를 수집합니다.
           </p>
 
           <p className='text-lg font-semibold mt-4'>수집하는 데이터</p>
@@ -47,7 +54,7 @@ const Policy = () => {
             id='consent'
             variant='policy'
             checked={isChecked}
-            onCheckedChange={(checked) => setIsChecked(checked === true)}
+            onCheckedChange={checked => setIsChecked(checked === true)}
           />
           <label
             htmlFor='consent'
@@ -63,18 +70,21 @@ const Policy = () => {
               <Button
                 variant='UndAIed'
                 size='lg'
-                onClick={() => { if (isChecked) { navigate('/game', { replace: true }) } }}
+                onClick={() => {
+                  if (isChecked) {
+                    navigate('/game', { replace: true })
+                  }
+                }}
                 disabled={!isChecked}
               >
                 게임 시작
               </Button>
             </TooltipTrigger>
-            {
-              !isChecked &&
+            {!isChecked && (
               <TooltipContent>
                 데이터 수집에 동의하지 않으시면 게임 플레이가 제한될 수 있습니다
               </TooltipContent>
-            }
+            )}
           </Tooltip>
         </div>
       </div>

@@ -11,7 +11,7 @@ import AudioPlayer from '../../util/AudioPlayer'
 import gameRoomBgm from '../../assets/bgm/game-room.mp3'
 import { getPlayerIcon } from '../../util/PlayerIcon'
 import ChatBubble from './components/ChatBuble'
-import Settings from '../../util/Setting'
+import Settings from '../../util/Settings'
 
 interface IRoomInfo {
   roomId: number
@@ -381,7 +381,7 @@ const GameRoom = () => {
         <Settings
           title='설정'
           first={false}
-          setFirst={() => {}}
+          setFirst={() => { }}
           onClose={() => setIsSettingsOpen(false)}
           isSettingsOpen={isSettingsOpen}
         />

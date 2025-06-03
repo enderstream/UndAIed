@@ -25,7 +25,7 @@ import {
   userMemoState,
 } from '../../store/gamePlayState'
 import GameEndModal from './components/GameEndModal'
-import Settings from '../../util/Setting'
+import Settings from '../../util/Settings'
 
 interface IChatSend {
   number: number
@@ -337,7 +337,7 @@ const GamePlay = () => {
           stage={gameInfo?.stage}
           round={gameInfo?.round}
           onSettingsClick={() => setIsSettingsOpen(true)}
-          // onLeaveRoom={handleLeaveRoom}
+        // onLeaveRoom={handleLeaveRoom}
         />
         <div className='lg:pl-78'>
           <div className='max-w-3xl mx-auto xl:max-w-none xl:ml-0 xl:mr-128'>
@@ -385,7 +385,7 @@ const GamePlay = () => {
         <Settings
           title='설정'
           first={false}
-          setFirst={() => {}}
+          setFirst={() => { }}
           onClose={() => setIsSettingsOpen(false)}
           isSettingsOpen={isSettingsOpen}
         />

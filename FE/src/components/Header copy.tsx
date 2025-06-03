@@ -1,19 +1,40 @@
 import { Link } from 'react-router-dom'
+// import { Link, useNavigate } from "react-router-dom";
+// import React, { useState } from "react";
 import Logo from '../assets/svg-icon/game_logo.svg'
-// Zustand store import
+import { useRecoilValue } from 'recoil'
+import { userState } from '../store/userState'
 import { useUserStore } from '@/store/userStore'
+// import { HashLink } from 'react-router-hash-link'
 
 interface IHeaderProps {
   scrollRatio: number
 }
 
 const Header = ({ scrollRatio }: IHeaderProps) => {
-  // Zustand로 전환
-  const { user } = useUserStore()
-  const isLogin = user.isLogin
+  // const [scrollTop, setScrollTop] = useState(0);
+
+  // const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
+  //   // const currentScrollTop = event.currentTarget.scrollTop;
+  //   // setScrollTop(currentScrollTop);
+  // };
+
+  // const navigate = useNavigate();
+
+  // const onBoardClick = () => {
+  //   navigate("/board");
+  // };
+
+  // const goToLogin = () => {
+  //   navigate("#login");
+  // };
+  conse userData = 
+  // const userData = useRecoilValue(userState)
+  const isLogin = userData.isLogin
 
   return (
     <header
+      // onScroll={handleScroll}
       className='fixed z-40 flex flex-col w-screen h-14 pt-4 primary-bg-black header-style'
     >
       <nav>
@@ -36,15 +57,14 @@ const Header = ({ scrollRatio }: IHeaderProps) => {
             </li>
           </div>
 
-          {/* 필요시 로그인/사용자 정보 표시 영역
-          <li className='mr-8 text-gray-300'>
+          {/* <li className='mr-8 text-gray-300'>
             {!isLogin ? (
-              <Link to='/#login' className='font-semibold'>
+              <HashLink to='/#login' smooth className='font-semibold'>
                 로그인
-              </Link>
+              </HashLink>
             ) : (
               <span className='font-semibold'>
-                {user.nickname}님 환영합니다!
+                {userData.nickname}님 환영합니다!
               </span>
             )}
           </li> */}

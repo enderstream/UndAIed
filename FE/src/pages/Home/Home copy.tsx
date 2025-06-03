@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react'
+
 import { Link } from 'react-router-dom'
 import Header from '@/components/Header'
 import HeaderTemp from '@/components/HeaderTemp'
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+// import {  faChevronDown,  faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import Logo from '@/assets/svg-icon/game_logo.svg'
 import InfoContainer from './components/InfoContainer'
 
-// Zustand store import
-import { useUserStore } from '@/store/userStore'
+import { useRecoilValue } from 'recoil'
+import { userState } from '@/store/userState'
 import LoginContainer from '@/pages/home/components/LoginContainer'
 import LogoutContainer from '@/pages/home/components/LogoutContainer'
 
@@ -24,13 +28,35 @@ import Img3 from '@/assets/tutorial/3.png'
 import Img4 from '@/assets/tutorial/4.png'
 import Img5 from '@/assets/tutorial/5.png'
 
+// interface IBoard {
+//   id: number;
+//   tag: string;
+//   title: string;
+//   date: string; // true면 내가 보낸 메시지, false면 상대방 메시지
+// }
+
 const Home = () => {
+  //fontawsome 타입 선언
+  // const downChervon: IconDefinition = faChevronDown;
+  // const rightChervon: IconDefinition = faChevronRight;
+
+  // const [offset, setOffset] = useState(0);
   const [scrollRatio, setScrollRatio] = useState(0)
   const INFO_VIEWPORT = 2
   const [infoScrollRatio, setInfoScrollRatio] = useState(0)
 
-  // Zustand로 변환
-  const { user } = useUserStore()
+  const userInfo = useRecoilValue(userState)
+
+  //게시글 관련
+  // const [boards, setBoards] = useState<IBoard[]>([
+  //   { id: 0, tag: "공지", title: "첫번째 공지", date: "2025-02-03" },
+  //   { id: 1, tag: "공지", title: "두번째 공지", date: "2025-02-03" },
+  //   { id: 2, tag: "공지", title: "세번째 공지", date: "2025-02-03" },
+  //   { id: 3, tag: "공지", title: "네번째 공지", date: "2025-02-03" },
+  //   { id: 4, tag: "공지", title: "다섯번째 공지", date: "2025-02-03" },
+  //   { id: 5, tag: "공지", title: "여섯번째 공지", date: "2025-02-03" },
+  //   { id: 6, tag: "공지", title: "일곱번째 공지", date: "2025-02-03" },
+  // ]);
 
   useEffect(() => {
     const audioFiles = [
@@ -44,15 +70,15 @@ const Home = () => {
 
     audioFiles.forEach(src => preloadAudio(src))
   }, [])
-
+  
   // 스크롤 감지 핸들러
   useEffect(() => {
     const onScroll = () => {
-      const docHeight = document.documentElement.scrollHeight
-      const winHeight = window.innerHeight
-      const infoHeigt = winHeight * INFO_VIEWPORT
-      const totalScrollableHeight = docHeight - winHeight
-      
+      const docHeight = document.documentElement.scrollHeight // 전체 문서 높이
+      const winHeight = window.innerHeight // 뷰포트 높이
+      const infoHeigt = winHeight * INFO_VIEWPORT // 안내 스크린 끝까지의 높이이
+      const totalScrollableHeight = docHeight - winHeight // 스크롤 가능한 전체 높이
+      // setOffset(window.scrollY);
       setScrollRatio(
         window.scrollY === 0
           ? 0
@@ -66,7 +92,7 @@ const Home = () => {
             : (window.scrollY / infoHeigt) * 100
       )
     }
-    
+    // clean up code
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -94,6 +120,13 @@ const Home = () => {
     //   // 굳이 따로 scrollTo(0) 할 필요 없이, 기본이 0 위치이므로 생략 가능
     // }
   }, [])
+
+  // const onChervonClick = () => {
+  //   window.scrollTo({
+  //     top: window.innerHeight * 3,
+  //     behavior: "smooth",
+  //   });
+  // };
 
   return (
     <div className=''>
@@ -145,19 +178,82 @@ const Home = () => {
                   />
                 </div>
               </div>
+              {/* <div className="flex justify-center">
+              <button
+                className="group w-18 h-18 flex flex-col justify-center items-center text-white transition-all mt-2"
+                onClick={onChervonClick}
+              >
+                <FontAwesomeIcon
+                  className="animate-bounce w-[1.2rem] h-[1.2rem]"
+                  icon={downChervon}
+                />
+                <h1 className="opacity-0 group-hover:opacity-100 transition-all">
+                  게임 시작
+                </h1>
+              </button>
+            </div> */}
             </div>
           </div>
         </div>
-
         {/* 우측 사이드바 컴포넌트 */}
         <div className='fixed right-0 z-50 w-[600px] min-h-[calc(100vh-3.5rem)] bg-linear-to-l from-black via-black to-transparent flex flex-col justify-center items-end pr-8'>
-          {user.isLogin ? (
-            <LoginContainer userInfo={user} />
+          {userInfo.isLogin ? (
+            <LoginContainer userInfo={userInfo} />
           ) : (
             <LogoutContainer />
           )}
         </div>
       </div>
+
+      {/* 아래 공지사항 목록 컴포넌트 */}
+      {/* <div className="flex justify-center bg-[#f7f7f7]">
+        <div className="relative white-container min-h-[calc(70vh-3.5rem)] py-10 flex md:pl-[calc(32rem+2rem)] lg:pl-[calc(42rem+2rem)]">
+          <div className="md:flex hidden w-lg lg:w-2xl left-[max(0px,calc(50%-45rem))] absolute mr-8">
+            <div className="w-1/2 pr-6">
+              <Link to={"/board"} className="text-lg font-bold text-[#872341]">
+                공지사항{" "}
+                <FontAwesomeIcon
+                  className="w-4 h-4"
+                  icon={rightChervon}
+                />
+              </Link>
+              <ul className="board-container mt-3">
+                {boards.map((board: IBoard) => (
+                  <Link className="" to="/" key={`info-${board.id}`}>
+                    <li className="board-content font-medium">
+                      <span className="board-content-title text-ellipsis">
+                        {board.title}
+                      </span>
+                      <span className="board-content-date text-ellipsis">
+                        {board.date}
+                      </span>
+                    </li>
+                  </Link>
+                ))}
+              </ul>
+            </div>
+            <div className="w-1/2 pr-6">
+              <Link to={"/board"} className="text-lg font-bold text-[#872341]">
+                버그 제보{" "}
+                <FontAwesomeIcon
+                  className="w-4 h-4"
+                  icon={rightChervon}
+                />
+              </Link>
+              <ul className="board-container mt-3">
+                {boards.map((board: IBoard) => (
+                  <Link className="" to="/" key={`bug-${board.id}`}>
+                    <li className="board-content font-medium">
+                      <span className="board-content-title">{board.title}</span>
+                      <span className="board-content-date">{board.date}</span>
+                    </li>
+                  </Link>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div> */}
 
       {/* footer */}
       <div className='footer min-h-[calc(30vh)] primary-bg-black p-9 text-white flex flex-col items-center'>
@@ -187,6 +283,7 @@ const Home = () => {
               이용약관
             </Link>
             <div className='h-4 w-0.5 bg-[#555555]' />
+
             <Link to={'/policy'} className='hover:text-white cursor-pointer'>
               운영정책
             </Link>

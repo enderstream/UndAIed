@@ -10,7 +10,7 @@ const queryClient = new QueryClient()
 createRoot(document.getElementById('root')!).render(
   <QueryClientProvider client={queryClient}>
     {/* <SocketProvider url='https://www.undaied.com'> */}
-      <RouterProvider router={router} />
+    <RouterProvider router={router} />
     {/* </SocketProvider> */}
   </QueryClientProvider>
 )

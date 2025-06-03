@@ -81,49 +81,48 @@ const NotFound = () => {
       <style>{styles}</style>
       <div className="min-h-screen bg-black flex flex-col items-center justify-center font-['Oswald'] overflow-hidden relative">
         <div className='text-center relative'>
-
           <h1 className='text-white text-2xl'>ERROR !</h1>
 
           <div style={{ position: 'relative' }}>
             <div className='text-white text-[8rem] font-bold mb-5'>404</div>
-            <div 
+            <div
               className='text-[8rem] font-bold mb-5'
-              style={{ 
+              style={{
                 position: 'absolute',
                 left: 0,
                 top: 0,
                 width: '100%',
                 opacity: 0.8,
                 animation: 'noise-1 1s infinite linear alternate-reverse',
-                textShadow: '2px 0 #ff0000'
+                textShadow: '2px 0 #ff0000',
               }}
             >
               404
             </div>
-            <div 
+            <div
               className='text-[8rem] font-bold mb-5'
-              style={{ 
+              style={{
                 position: 'absolute',
                 left: 0,
                 top: 0,
                 width: '100%',
                 opacity: 0.8,
                 animation: 'noise-2 1s infinite linear alternate-reverse',
-                textShadow: '-2px 0 #00ff00'
+                textShadow: '-2px 0 #00ff00',
               }}
             >
               404
             </div>
-            <div 
+            <div
               className='text-[8rem] font-bold mb-5'
-              style={{ 
+              style={{
                 position: 'absolute',
                 left: 0,
                 top: 0,
                 width: '100%',
                 opacity: 0.8,
                 animation: 'noise-3 0.1s infinite linear alternate-reverse',
-                textShadow: '1px 1px #0000ff'
+                textShadow: '1px 1px #0000ff',
               }}
             >
               404
@@ -134,11 +133,7 @@ const NotFound = () => {
             페이지를 찾을 수 없습니다
           </p>
 
-          <Button
-            variant="UndAIed"
-            size="notFound"
-            className='text-base mt-5'
-          >
+          <Button variant='UndAIed' size='notFound' className='text-base mt-5'>
             <Link to='/'>홈으로 돌아가기</Link>
           </Button>
         </div>

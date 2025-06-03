@@ -1,11 +1,12 @@
 import { useNavigate } from 'react-router-dom'
 import type { IUser } from '../../../types/user'
-// Zustand stores import
-import { useUserStore, useShowIntroStore } from '@/store/userStore'
+import { userState } from '../../../store/userState'
+import { useRecoilState, useSetRecoilState } from 'recoil'
 import IntroOverlay from '../../../util/IntroOverlay'
 import { useState } from 'react'
 import Policy from '../../Policy'
 import FirstSetting from '../../../util/FirstSetting'
+import { setShowIntroState } from '../../../store/showState'
 import { getPlayerIcon } from '../../../util/PlayerIcon'
 
 interface ILoginContainer {
@@ -14,10 +15,8 @@ interface ILoginContainer {
 
 const LoginContainer = ({ userInfo }: ILoginContainer) => {
   const navigate = useNavigate()
-  // Zustand로 변환
-  const { setUser } = useUserStore()
-  const { showIntro, setShowIntro } = useShowIntroStore()
-  
+  const setUser = useSetRecoilState(userState)
+  const [showIntro, setShowIntro] = useRecoilState(setShowIntroState)
   const [showPolicy, setShowPolicy] = useState(false)
   const [showSetting, setShowSetting] = useState(false)
 
@@ -25,9 +24,7 @@ const LoginContainer = ({ userInfo }: ILoginContainer) => {
     const userPersistData = localStorage.getItem('userPersist')
     if (userPersistData) {
       const userData = JSON.parse(userPersistData)
-      
-      // Zustand 구조만 지원
-      const userId = userData.state?.user?.email
+      const userId = userData.userState.email // 현재 로그인된 사용자의 ID
 
       const policyData = localStorage.getItem(`policy`)
       if (policyData) {
@@ -61,9 +58,7 @@ const LoginContainer = ({ userInfo }: ILoginContainer) => {
     const userPersistData = localStorage.getItem('userPersist')
     if (userPersistData) {
       const userData = JSON.parse(userPersistData)
-      
-      // Zustand 구조만 지원
-      const userId = userData.state?.user?.email
+      const userId = userData.userState.email
 
       localStorage.setItem(
         `policy`,
@@ -84,9 +79,7 @@ const LoginContainer = ({ userInfo }: ILoginContainer) => {
     const userPersistData = localStorage.getItem('userPersist')
     if (userPersistData) {
       const userData = JSON.parse(userPersistData)
-      
-      // Zustand 구조만 지원
-      const userId = userData.state?.user?.email
+      const userId = userData.userState.email
 
       localStorage.setItem(
         `policy`,

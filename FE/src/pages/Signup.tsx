@@ -32,7 +32,7 @@ const Signup = () => {
       //   age: data.age,
       //   nickname: data.nickname,
       // });
-    } catch (error) { }
+    } catch (error) {}
   }
   const onInvalidSubmit = (errors: FieldErrors<IProfile>) => {
     if (errors.nickname?.type === 'required') {

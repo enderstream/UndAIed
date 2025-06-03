@@ -97,22 +97,6 @@
 
 // export default router;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // src/routes/routes.tsx
 // import { createBrowserRouter } from 'react-router-dom'
 // import App from '@/App'
@@ -211,27 +195,19 @@
 
 // export default router
 
-
-
-
-
-
-
-
-
-
-
-
 // 라우트 공사 중
 
 import App from '@/App'
 import NotFound from '@/pages/NotFound'
 import { createBrowserRouter } from 'react-router'
 import Policy from '@/pages/Policy'
+import Home from '@/pages/home/Home'
 
 // 👇 임시 컴포넌트들을 여기에 바로 생성
-const TempHome = () => <div className="p-8 text-center">🏠 Home 작업중...</div>
-const TempBoard = () => <div className="p-8 text-center">📝 Board 작업중...</div>
+const TempHome = () => <div className='p-8 text-center'>🏠 Home 작업중...</div>
+const TempBoard = () => (
+  <div className='p-8 text-center'>📝 Board 작업중...</div>
+)
 
 const router = createBrowserRouter([
   {
@@ -240,14 +216,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: '',
-        element: <TempHome />,
+        element: <Home />,
+        // element: <TempHome />,
       },
       {
-        path: '/policy', 
+        path: '/policy',
         element: <Policy />,
       },
       {
-        path: '/board',
+        path: '/home',
         element: <TempBoard />,
       },
       // ... 나머지들도 임시 컴포넌트로

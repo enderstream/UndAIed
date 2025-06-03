@@ -80,9 +80,10 @@ export const GameProfileEditor = ({
                   onClick={() => setSelectedProfileImage(avatar.id)}
                   className={`
                     ${blockStyle}
-                    ${selectedProfileImage === avatar.id
-                      ? 'border-[#F74A5C] shadow-[0_0_15px_0] shadow-[#F74A5C]'
-                      : ''
+                    ${
+                      selectedProfileImage === avatar.id
+                        ? 'border-[#F74A5C] shadow-[0_0_15px_0] shadow-[#F74A5C]'
+                        : ''
                     }
                     p-2 cursor-pointer transition-all duration-200 hover:border-[#F74A5C]
                   `}

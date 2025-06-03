@@ -1,13 +1,13 @@
 import axios from 'axios'
+// import GoogleLoginButton from "./GoogleLoginBtn";
+import { useSetRecoilState } from 'recoil'
 import { useNavigate } from 'react-router'
-// Zustand store import
-import { useUserStore } from '@/store/userStore'
+import { userState } from '../../../store/userState'
 import GoogleLoginButton2 from './GoogleLoginBtn2'
-// import { HashLink } from 'react-router-hash-link'
+import { HashLink } from 'react-router-hash-link'
 
 const LogoutContainer = () => {
-  // Zustand로 변환
-  const { setUser } = useUserStore()
+  const setUser = useSetRecoilState(userState)
   const navigate = useNavigate()
 
   const handleTokenReceive = async (token: string) => {
@@ -17,7 +17,8 @@ const LogoutContainer = () => {
         `${import.meta.env.VITE_API_URL}/api/v1/user`,
         { token }
       )
-      
+      // 서버 응답 확인
+
       // 응답이 성공인 경우
       if (response.data.isSuccess) {
         // 서버에서 내려준 유저 정보를 구조분해 할당
@@ -30,7 +31,7 @@ const LogoutContainer = () => {
           profileImage,
         } = response.data.data
 
-        // Zustand userStore에 사용자 정보 저장
+        // Recoil userState에 사용자 정보 저장
         setUser({
           isLogin: true,
           token: serverToken,
@@ -44,7 +45,11 @@ const LogoutContainer = () => {
         // 신규 회원가입(201)과 기존 회원 로그인(200) 분기 처리
         if (response.status === 201) {
           // 회원가입 직후, 성별/나이 등의 추가 정보 입력을 받아야 함
+          // 라우팅 예시
           navigate('/signup')
+
+          // 혹은 모달로 처리하는 예시
+          // setShowSignUpModal(true);
         } else if (response.status === 200) {
           // 이미 회원가입된 사용자이므로 바로 메인 페이지 등으로 이동
           navigate('/')
@@ -113,13 +118,21 @@ const LogoutContainer = () => {
       `}
       </style>
       <div id='login' className='flex flex-col w-full items-center'>
-        {/* <HashLink to='/#login' smooth /> */}
+        <HashLink to='/#login' smooth />
         <div className='overflow-hidden border mb-8 bg-black'>
           <button onClick={() => navigate('/game')} className='game-button'>
             GAME START
           </button>
         </div>
         <GoogleLoginButton2 onTokenReceive={handleTokenReceive} />
+        {/* <GoogleLoginButton onTokenReceive={handleTokenReceive} /> */}
+        {/* <button className="w-90 h-9 border border-[#dadce0] bg-white rounded-[20px] flex items-center justify-between px-3 mt-5">
+        <div></div>
+        <div className="text-[#3c4043] text-sm font-medium font-['Roboto']">
+          가입하기
+        </div>
+        <div></div>
+      </button> */}
       </div>
     </>
   )
