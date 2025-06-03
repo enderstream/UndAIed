@@ -160,13 +160,13 @@ const Home = () => {
       </div>
 
       {/* footer */}
-      <div className='footer min-h-[calc(30vh)] primary-bg-black p-9 text-white flex flex-col items-center'>
-        <img src={Logo} alt='' className='mb-9' />
-        <span className='text-[#a1a1aa] text-xs mb-4'>
+      {/* <div className='footer min-h-[calc(30vh)] primary-bg-black p-9 text-white flex flex-col items-center'>
+        <img src={Logo} alt='' className='mb-9' /> */}
+        {/* <span className='text-[#a1a1aa] text-xs mb-4'>
           © SSAFY Korea Corp. & Daejeon 2nd Class B212
-        </span>
+        </span> */}
 
-        <nav className='border-[#555555] border-t-2 w-3xl'>
+        {/* <nav className='border-[#555555] border-t-2 w-3xl'>
           <ul className='flex space-x-6 text-gray-300 text-sm h-8 justify-center items-center'>
             <Link to={'/'} className='hover:text-white cursor-pointer'>
               계정정보
@@ -195,8 +195,10 @@ const Home = () => {
               회사소개
             </Link>
           </ul>
-        </nav>
+        </nav> */}
+      {/* 
       </div>
+      */}
     </div>
   )
 }
