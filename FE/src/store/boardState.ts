@@ -5,7 +5,7 @@ export const currentPageState = atom({
   default: 1,
 })
 
-export const boardRefreshState = atom({
-  key: 'boardRefreshState',
-  default: 0,
-})
+// export const boardRefreshState = atom({
+//   key: 'boardRefreshState',
+//   default: 0,
+// })

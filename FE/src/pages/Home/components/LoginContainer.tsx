@@ -199,10 +199,10 @@ const LoginContainer = ({ userInfo }: ILoginContainer) => {
                   {userInfo.totalWin + userInfo.totalLose === 0
                     ? '0'
                     : (
-                      (userInfo.totalWin /
-                        (userInfo.totalWin + userInfo.totalLose)) *
-                      100
-                    ).toFixed(1)}
+                        (userInfo.totalWin /
+                          (userInfo.totalWin + userInfo.totalLose)) *
+                        100
+                      ).toFixed(1)}
                   %
                 </span>
               </div>

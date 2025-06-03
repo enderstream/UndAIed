@@ -381,7 +381,7 @@ const GameRoom = () => {
         <Settings
           title='설정'
           first={false}
-          setFirst={() => { }}
+          setFirst={() => {}}
           onClose={() => setIsSettingsOpen(false)}
           isSettingsOpen={isSettingsOpen}
         />

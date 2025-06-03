@@ -14,9 +14,9 @@ import type { SettingProps } from '../types/setting'
 import { settingsState } from '../store/settingState'
 
 const blockStyle =
-  'bg-[#0000006c] border border-[#f74a5c]/40 backdrop-blur-[12.20px] text-[#fffbfb] rounded-[5px] transition-all duration-200'
+  'bg-[#0000006c] border border-[#F74a5c]/40 backdrop-blur-[12.20px] text-[#fffbfb] rounded-[5px] transition-all duration-200'
 const blockHover =
-  'hover: hover:border-[#f93c4f] hover:shadow-[0_0_15px_0] hover:shadow-[#F74A5C]'
+  'hover: hover:border-[#f93c4f] hover:shadow-[0_0_15px_0] hover:shadow-[#F74a5c]'
 const blockActive =
   'active:bg-[#f837644e] active:border-[#f837644e] active:shadow-sm'
 
@@ -188,7 +188,7 @@ const Settings = ({
                       step='0.01'
                       value={settings.volume}
                       onChange={e => setVolume(parseFloat(e.target.value))}
-                      className='flex-1 accent-[#f74a5c]'
+                      className='flex-1 accent-[#F74a5c]'
                       aria-label='Volume control'
                     />
                   </div>

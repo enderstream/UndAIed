@@ -40,7 +40,7 @@ const scrollbarStyles = `
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #f74a5c;
+    background: #F74a5c;
     border-radius: 3px;
   }
 
@@ -61,7 +61,7 @@ const GamePlayDetail = ({
   const [activeRound, setActiveRound] = useState(1)
 
   const blockStyle =
-    'bg-[#0000006c] border border-[#f74a5c]/40 backdrop-blur-[12.20px] text-[#fffbfb] rounded-[5px] transition-all duration-200'
+    'bg-[#0000006c] border border-[#F74a5c]/40 backdrop-blur-[12.20px] text-[#fffbfb] rounded-[5px] transition-all duration-200'
 
   const { data: gameRecords, isLoading } = useQuery({
     queryKey: ['gameRecords', gameId],
@@ -136,7 +136,7 @@ const GamePlayDetail = ({
         />
 
         <div
-          className={`custom-scrollbar relative w-full max-w-2xl max-h-[85vh] overflow-y-auto m-4 ${blockStyle} border-2 px-5 py-3 shadow-[0_0_12px_0_#f74a5c]`}
+          className={`custom-scrollbar relative w-full max-w-2xl max-h-[85vh] overflow-y-auto m-4 ${blockStyle} border-2 px-5 py-3 shadow-[0_0_12px_0_#F74a5c]`}
         >
           {/* 헤더 영역 */}
           <div className='sticky top-0 z-10 bg-black/70 backdrop-blur-xl border-b border-rose-500/40 px-4 py-5 flex justify-between items-center'>
@@ -153,11 +153,10 @@ const GamePlayDetail = ({
                 <button
                   key={record.roundNumber}
                   onClick={() => setActiveRound(record.roundNumber)}
-                  className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
-                    activeRound === record.roundNumber
+                  className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${activeRound === record.roundNumber
                       ? 'bg-rose-500 text-white shadow-lg shadow-rose-500/30'
                       : 'bg-black/40 text-gray-400 hover:bg-rose-500/20 hover:text-white'
-                  }`}
+                    }`}
                 >
                   Round {record.roundNumber}
                 </button>

@@ -145,8 +145,9 @@ const Home = () => {
                 <div
                   className='absolute top-0 left-0 w-auto h-[90%] flex gap-8 transition-transform'
                   style={{
-                    transform: `translateX(calc(-${infoScrollRatio}% + ${(infoScrollRatio / 100) * 720
-                      }px))`,
+                    transform: `translateX(calc(-${infoScrollRatio}% + ${
+                      (infoScrollRatio / 100) * 720
+                    }px))`,
                   }}
                 >
                   <InfoContainer

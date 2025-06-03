@@ -1,5 +1,5 @@
-import { useRecoilValue } from 'recoil'
-import { boardRefreshState } from '../../../store/boardState'
+// import { useRecoilValue } from 'recoil'
+// import { boardRefreshState } from '../../../store/boardState'
 import type { PostListProps, Post } from '../../../types/board'
 import WriteButton from './WriteButton'
 import { useEffect } from 'react'
@@ -12,7 +12,7 @@ const PostList = ({
   currentPage,
   formatDate,
 }: PostListProps) => {
-  const boardRefresh = useRecoilValue(boardRefreshState)
+  // const boardRefresh = useRecoilValue(boardRefreshState)
 
   interface JWTPayload {
     roles: string

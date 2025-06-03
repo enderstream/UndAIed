@@ -1,40 +1,22 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 
-interface ConsentProps {
-  onAccept: () => void
-  onDecline: () => void
-}
-
-const Policy: React.FC<ConsentProps> = ({ onAccept, onDecline }) => {
+const Policy = () => {
   const [isChecked, setIsChecked] = useState(false)
   const navigate = useNavigate()
 
-  const handleSubmit = () => {
-    if (isChecked) {
-      onAccept()
-      navigate('/game', { replace: true })
-    } else {
-      if (
-        window.confirm(
-          '데이터 수집에 동의하지 않으시면 게임 플레이가 제한될 수 있습니다. 계속하시겠습니까?'
-        )
-      ) {
-        onDecline()
-      }
-    }
-  }
-
   return (
-    <div className='fixed inset-0 bg-black flex items-center justify-center z-50'>
-      <div className='bg-[#0000006c] border border-[#f74a5c] backdrop-blur-[12.20px] text-white rounded-lg p-6 max-w-2xl w-full mx-4'>
-        <h2 className='text-xl font-bold mb-4'>연구 및 데이터 수집 동의서</h2>
+    <div className='fixed inset-0 bg-black flex items-center justify-center z-50 p-4'>
+      <div className='bg-[#0000006c] border border-[#F74a5c] backdrop-blur-[12.20px] text-white rounded-lg p-6 max-w-2xl w-full max-h-[90vh] flex flex-col'>
+        <h2 className='text-xl font-bold mb-4 flex-shrink-0'>연구 및 데이터 수집 동의서</h2>
 
-        <div className='space-y-4 mb-6 border p-4 border-[#868585]'>
+        <div className='space-y-4 mb-6 border p-4 border-[#868585] overflow-y-auto max-h-[50vh] flex-1 rounded-sm'>
           <p className='text-lg font-semibold'>연구 목적</p>
           <p>
-            본 게임은 인공지능(AI)과 인간의 상호작용 패턴을 연구하고, AI의
-            자연스러운 대화 능력을 향상시키기 위한 데이터를 수집합니다.
+            본 게임은 인공지능(AI)과 인간의 상호작용 패턴을 연구하고, AI의 자연스러운 대화 능력을 향상시키기 위한 데이터를 수집합니다.
           </p>
 
           <p className='text-lg font-semibold mt-4'>수집하는 데이터</p>
@@ -60,26 +42,40 @@ const Policy: React.FC<ConsentProps> = ({ onAccept, onDecline }) => {
           </ul>
         </div>
 
-        <div className='flex items-center mb-6'>
-          <input
-            type='checkbox'
+        <div className='flex items-center mb-6 gap-3 flex-shrink-0'>
+          <Checkbox
             id='consent'
+            variant='policy'
             checked={isChecked}
-            onChange={e => setIsChecked(e.target.checked)}
-            className='mr-2'
+            onCheckedChange={(checked) => setIsChecked(checked === true)}
           />
-          <label htmlFor='consent'>
+          <label
+            htmlFor='consent'
+            className='text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer select-none'
+          >
             위 내용을 이해했으며, 데이터 수집에 동의합니다.
           </label>
         </div>
 
-        <div className='flex justify-center gap-4'>
-          <button
-            onClick={handleSubmit}
-            className='px-6 py-2 bg-[#f74a5c] hover:bg-[#ff6b7d] active:bg-[#f837644e] rounded transition-colors duration-200'
-          >
-            동의 후 게임 시작
-          </button>
+        <div className='flex justify-center flex-shrink-0'>
+          <Tooltip>
+            <TooltipTrigger>
+              <Button
+                variant='UndAIed'
+                size='lg'
+                onClick={() => { if (isChecked) { navigate('/game', { replace: true }) } }}
+                disabled={!isChecked}
+              >
+                게임 시작
+              </Button>
+            </TooltipTrigger>
+            {
+              !isChecked &&
+              <TooltipContent>
+                데이터 수집에 동의하지 않으시면 게임 플레이가 제한될 수 있습니다
+              </TooltipContent>
+            }
+          </Tooltip>
         </div>
       </div>
     </div>

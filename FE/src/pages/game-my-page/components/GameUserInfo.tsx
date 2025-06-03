@@ -6,9 +6,9 @@ import { useUserProfile } from '../../../hooks/useUserData'
 import { useClickSound } from '../../../hooks/useClickSound'
 
 const blockStyle =
-  'bg-[#0000006c] border border-[#f74a5c]/40 backdrop-blur-[12.20px] text-[#fffbfb] rounded-[5px] transition-all duration-200'
+  'bg-[#0000006c] border border-[#F74a5c]/40 backdrop-blur-[12.20px] text-[#fffbfb] rounded-[5px] transition-all duration-200'
 const blockHover =
-  'hover:bg-[#f8376467] hover:border-[#f93c4f] hover:shadow-[0_0_15px_0] hover:shadow-[#F74A5C]'
+  'hover:bg-[#f8376467] hover:border-[#f93c4f] hover:shadow-[0_0_15px_0] hover:shadow-[#F74a5c]'
 const blockActive =
   'active:bg-[#f837644e] active:border-[#f837644e] active:shadow-sm'
 export const GameUserInfo = () => {
@@ -22,8 +22,8 @@ export const GameUserInfo = () => {
   const winningRate = userInfo
     ? userInfo.totalWin + userInfo.totalLose > 0
       ? Math.round(
-          (userInfo.totalWin / (userInfo.totalLose + userInfo.totalWin)) * 10000
-        ) / 100
+        (userInfo.totalWin / (userInfo.totalLose + userInfo.totalWin)) * 10000
+      ) / 100
       : 0
     : 0
 

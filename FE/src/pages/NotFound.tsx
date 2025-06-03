@@ -1,7 +1,6 @@
-// import React from "react";
+import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
 
-//clip-path: inset를 이용해서 보여줄 영역을 지정해 효과를 표현함 (40% 0 61% 0 은 세로 기준 40% ~ 61% 부분을 보여준다는 뜻)
 const styles = `
   @keyframes noise-1 {
     0% { clip-path: inset(40% 0 61% 0); }
@@ -74,95 +73,74 @@ const styles = `
     95% { clip-path: inset(57% 0 43% 0); }
     100% { clip-path: inset(27% 0 73% 0); }
   }
-
-  .noise-base {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-  }
-
-  .noise-effect-1 {
-    opacity: 0.8;
-    animation: noise-1 1s infinite linear alternate-reverse;
-    text-shadow: 2px 0 #ff0000;
-  }
-
-  .noise-effect-2 {
-    opacity: 0.8;
-    animation: noise-2 1s infinite linear alternate-reverse;
-    text-shadow: -2px 0 #00ff00;
-  }
-
-  .noise-effect-3 {
-    opacity: 0.8;
-    animation: noise-3 0.1s infinite linear alternate-reverse;
-    text-shadow: 1px 1px #0000ff;
-  }
-
-  .glitch-container {
-    position: relative;
-  }
-
-  .custom-red-shadow1:hover {
-  box-shadow: 0px 0px 13px 2px #F74A5C;
-}
-  
-   .custom-red-shadow2:hover {
-   box-shadow: 0px_0px_5.3px_0px_#F74A5C;
-}
-
-
 `
 
-const NotFound = (): JSX.Element => {
+const NotFound = () => {
   return (
     <>
       <style>{styles}</style>
       <div className="min-h-screen bg-black flex flex-col items-center justify-center font-['Oswald'] overflow-hidden relative">
         <div className='text-center relative'>
-          <h1 className='text-white text-2xl '>ERROR!</h1>
-          <div className='glitch-container'>
+
+          <h1 className='text-white text-2xl'>ERROR !</h1>
+
+          <div style={{ position: 'relative' }}>
             <div className='text-white text-[8rem] font-bold mb-5'>404</div>
-            <div className='noise-base text-[8rem] font-bold mb-5 noise-effect-1'>
+            <div 
+              className='text-[8rem] font-bold mb-5'
+              style={{ 
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                width: '100%',
+                opacity: 0.8,
+                animation: 'noise-1 1s infinite linear alternate-reverse',
+                textShadow: '2px 0 #ff0000'
+              }}
+            >
               404
             </div>
-            <div className='noise-base text-[8rem] font-bold mb-5 noise-effect-2'>
+            <div 
+              className='text-[8rem] font-bold mb-5'
+              style={{ 
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                width: '100%',
+                opacity: 0.8,
+                animation: 'noise-2 1s infinite linear alternate-reverse',
+                textShadow: '-2px 0 #00ff00'
+              }}
+            >
               404
             </div>
-            <div className='noise-base text-[8rem] font-bold mb-5 noise-effect-3'>
+            <div 
+              className='text-[8rem] font-bold mb-5'
+              style={{ 
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                width: '100%',
+                opacity: 0.8,
+                animation: 'noise-3 0.1s infinite linear alternate-reverse',
+                textShadow: '1px 1px #0000ff'
+              }}
+            >
               404
             </div>
           </div>
+
           <p className='text-white text-xl tracking-widest'>
             페이지를 찾을 수 없습니다
           </p>
 
-          <button
-            className='mt-5 px-4 py-2
-                        bg-[#5349507a]
-                        border border-[#f74a5c]/60 
-                        backdrop-blur-[12.20px] 
-                        justify-center 
-                        items-center 
-                        inline-flex
-                        text-[#fffbfb]
-
-                        hover:bg-[#f8376467]
-                        hover:border-[#f93c4f]
-                        rounded-[5px] 
-                        custom-red-shadow1
-                        hover:shadow-[#F74A5C]
-                        transition-all 
-                        duration-300
-                        
-                        active:bg-[#f837644e]
-                        active:border-[#f837644e]
-                        active:shadow-sm
-    '
+          <Button
+            variant="UndAIed"
+            size="notFound"
+            className='text-base mt-5'
           >
-            <Link to={'/'}>홈으로 돌아가기</Link>
-          </button>
+            <Link to='/'>홈으로 돌아가기</Link>
+          </Button>
         </div>
       </div>
     </>
